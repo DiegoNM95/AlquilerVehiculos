@@ -8,3 +8,4 @@ C:\Users\ludie\OneDrive\UFG\Ciclo-06\PRG2\Projects C#\Alquiler de Vehículos\Alq
 C:\Users\ludie\OneDrive\UFG\Ciclo-06\PRG2\Projects C#\Alquiler de Vehículos\Alquiler de Vehículos\obj\Debug\Alquiler de Vehículos.csproj.CoreCompileInputs.cache
 C:\Users\ludie\OneDrive\UFG\Ciclo-06\PRG2\Projects C#\Alquiler de Vehículos\Alquiler de Vehículos\obj\Debug\Alquiler de Vehículos.exe
 C:\Users\ludie\OneDrive\UFG\Ciclo-06\PRG2\Projects C#\Alquiler de Vehículos\Alquiler de Vehículos\obj\Debug\Alquiler de Vehículos.pdb
+C:\Users\ludie\OneDrive\UFG\Ciclo-06\PRG2\Projects C#\Alquiler de Vehículos\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.frmprincipal.resources

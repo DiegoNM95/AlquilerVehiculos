@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Alquiler_de_Vehículos
 {
-	public partial class frmlogin : Form
+	public partial class frmprincipal : Form
 	{
-		public frmlogin()
+		public frmprincipal()
 		{
 			InitializeComponent();
 		}
