@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace Alquiler_de_Vehículos
 {
-	public partial class frmprincipal : Form
+	public partial class ConfiguracionCont : Form
 	{
-		public frmprincipal()
+		public ConfiguracionCont()
 		{
 			InitializeComponent();
-		}
-
-		private void btnconfiguracion_Click(object sender, EventArgs e)
-		{
-			ConfiguracionCont frmconfiguracion = new ConfiguracionCont();
-			this.Hide();
-			frmconfiguracion.ShowDialog();
-			this.Close();
 		}
 	}
 }
