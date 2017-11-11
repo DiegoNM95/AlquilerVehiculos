@@ -130,7 +130,6 @@
 			this.btnconfiguracion.Name = "btnconfiguracion";
 			this.btnconfiguracion.Size = new System.Drawing.Size(160, 115);
 			this.btnconfiguracion.TabIndex = 7;
-			this.btnconfiguracion.Text = "Configuración";
 			this.btnconfiguracion.UseVisualStyleBackColor = false;
 			this.btnconfiguracion.Click += new System.EventHandler(this.btnconfiguracion_Click);
 			// 
