@@ -24,5 +24,13 @@ namespace Alquiler_de_Vehículos
 			frmconfiguracion.ShowDialog();
 			this.Close();
 		}
-	}
+
+        private void btnclientes_Click(object sender, EventArgs e)
+        {
+            ClientesCont frmclientes = new ClientesCont();
+            this.Hide();
+            frmclientes.ShowDialog();
+            this.Close();
+        }
+    }
 }
