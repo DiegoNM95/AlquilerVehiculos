@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.button2 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
 			this.button4 = new System.Windows.Forms.Button();
 			this.button5 = new System.Windows.Forms.Button();
@@ -37,17 +36,9 @@
 			this.lblusuario = new System.Windows.Forms.Label();
 			this.lblnameuser = new System.Windows.Forms.Label();
 			this.btnconfiguracion = new System.Windows.Forms.Button();
+			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.SuspendLayout();
-			// 
-			// button2
-			// 
-			this.button2.Location = new System.Drawing.Point(278, 196);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(160, 71);
-			this.button2.TabIndex = 1;
-			this.button2.Text = "button2";
-			this.button2.UseVisualStyleBackColor = true;
 			// 
 			// button3
 			// 
@@ -123,6 +114,17 @@
 			this.btnconfiguracion.TabIndex = 7;
 			this.btnconfiguracion.UseVisualStyleBackColor = false;
 			this.btnconfiguracion.Click += new System.EventHandler(this.btnconfiguracion_Click);
+			// 
+			// button2
+			// 
+			this.button2.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.button2.BackgroundImage = global::Alquiler_de_Vehículos.Properties.Resources.precio;
+			this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.button2.Location = new System.Drawing.Point(278, 152);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(160, 115);
+			this.button2.TabIndex = 1;
+			this.button2.UseVisualStyleBackColor = false;
 			// 
 			// button1
 			// 
