@@ -24,5 +24,13 @@ namespace Alquiler_de_Vehículos
 			frmconfiguracion.ShowDialog();
 			this.Close();
 		}
+
+		private void btnprecios_Click(object sender, EventArgs e)
+		{
+			PreciosCont preciosCont = new PreciosCont();
+			this.Hide();
+			preciosCont.ShowDialog();
+			this.Close();
+		}
 	}
 }

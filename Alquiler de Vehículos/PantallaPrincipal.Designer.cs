@@ -117,6 +117,7 @@
 			this.btnprecios.Size = new System.Drawing.Size(244, 142);
 			this.btnprecios.TabIndex = 1;
 			this.btnprecios.UseVisualStyleBackColor = false;
+			this.btnprecios.Click += new System.EventHandler(this.btnprecios_Click);
 			// 
 			// btnclientes
 			// 

@@ -63,6 +63,12 @@
     <Compile Include="PantallaPrincipal.Designer.cs">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="PreciosCont.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreciosCont.Designer.cs">
+      <DependentUpon>PreciosCont.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ConfiguracionCont.resx">
