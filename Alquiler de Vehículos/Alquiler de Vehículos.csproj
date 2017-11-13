@@ -115,5 +115,14 @@
   <ItemGroup>
     <None Include="img\precio.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="img\vehiculos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\usuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\renta.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
