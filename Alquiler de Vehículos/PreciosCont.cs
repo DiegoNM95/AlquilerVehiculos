@@ -16,5 +16,10 @@ namespace Alquiler_de_Vehículos
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void PreciosCont_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
