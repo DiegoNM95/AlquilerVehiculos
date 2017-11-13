@@ -32,5 +32,37 @@ namespace Alquiler_de_Vehículos
 			preciosCont.ShowDialog();
 			this.Close();
 		}
+
+		private void btnclientes_Click(object sender, EventArgs e)
+		{
+			ClientesCont clientesCont = new ClientesCont();
+			this.Hide();
+			clientesCont.ShowDialog();
+			this.Close();
+		}
+
+		private void btnvehiculos_Click(object sender, EventArgs e)
+		{
+			VehiculosCont vehiculosCont = new VehiculosCont();
+			this.Hide();
+			vehiculosCont.ShowDialog();
+			this.Close();
+		}
+
+		private void btnrenta_Click(object sender, EventArgs e)
+		{
+			RentaCont rentaCont = new RentaCont();
+			this.Hide();
+			rentaCont.ShowDialog();
+			this.Close();
+		}
+
+		private void btnusuarios_Click(object sender, EventArgs e)
+		{
+			UsuariosCont usuariosCont = new UsuariosCont();
+			this.Hide();
+			usuariosCont.ShowDialog();
+			this.Close();
+		}
 	}
 }
