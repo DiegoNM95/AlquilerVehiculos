@@ -33,6 +33,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lblcodigo = new System.Windows.Forms.Label();
             this.txtcodigo = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +50,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.txtcodigo);
             this.tabPage1.Controls.Add(this.lblcodigo);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -86,6 +88,13 @@
             this.txtcodigo.Size = new System.Drawing.Size(100, 20);
             this.txtcodigo.TabIndex = 1;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 2;
+            // 
             // UsuariosCont
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -108,5 +117,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox txtcodigo;
         private System.Windows.Forms.Label lblcodigo;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
