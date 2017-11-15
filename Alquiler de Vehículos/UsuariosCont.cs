@@ -21,5 +21,26 @@ namespace Alquiler_de_Vehículos
         {
 
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void UsuariosCont_Load(object sender, EventArgs e)
+        {
+            cmbusuario.Items.Add("Administrador");
+            cmbusuario.Items.Add("Vendedor");
+        }
     }
 }
