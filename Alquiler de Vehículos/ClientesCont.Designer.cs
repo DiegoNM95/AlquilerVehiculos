@@ -43,8 +43,7 @@
             this.txtDui = new System.Windows.Forms.TextBox();
             this.txtPapellido = new System.Windows.Forms.TextBox();
             this.txtPnombre = new System.Windows.Forms.TextBox();
-            this.txtclave = new System.Windows.Forms.TextBox();
-            this.btbuscar = new System.Windows.Forms.Button();
+            this.txtcodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,7 +51,7 @@
             this.lblPapellido = new System.Windows.Forms.Label();
             this.lblSnombre = new System.Windows.Forms.Label();
             this.lblPnombre = new System.Windows.Forms.Label();
-            this.lblclave = new System.Windows.Forms.Label();
+            this.lblcodigo = new System.Windows.Forms.Label();
             this.btneliminar = new System.Windows.Forms.Button();
             this.btnmodificar = new System.Windows.Forms.Button();
             this.btnagregar = new System.Windows.Forms.Button();
@@ -60,6 +59,10 @@
             this.cbtipolicencia = new System.Windows.Forms.ComboBox();
             this.txttercernombre = new System.Windows.Forms.TextBox();
             this.lblTnombre = new System.Windows.Forms.Label();
+            this.btbuscar = new System.Windows.Forms.Button();
+            this.btnlimpiar = new System.Windows.Forms.Button();
+            this.txtbuscarcodigo = new System.Windows.Forms.TextBox();
+            this.lblBcodigo = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPageAdministracion.SuspendLayout();
             this.tabPageBusqueda.SuspendLayout();
@@ -93,8 +96,7 @@
             this.tabPageAdministracion.Controls.Add(this.txtDui);
             this.tabPageAdministracion.Controls.Add(this.txtPapellido);
             this.tabPageAdministracion.Controls.Add(this.txtPnombre);
-            this.tabPageAdministracion.Controls.Add(this.txtclave);
-            this.tabPageAdministracion.Controls.Add(this.btbuscar);
+            this.tabPageAdministracion.Controls.Add(this.txtcodigo);
             this.tabPageAdministracion.Controls.Add(this.label1);
             this.tabPageAdministracion.Controls.Add(this.label7);
             this.tabPageAdministracion.Controls.Add(this.label6);
@@ -102,7 +104,7 @@
             this.tabPageAdministracion.Controls.Add(this.lblPapellido);
             this.tabPageAdministracion.Controls.Add(this.lblSnombre);
             this.tabPageAdministracion.Controls.Add(this.lblPnombre);
-            this.tabPageAdministracion.Controls.Add(this.lblclave);
+            this.tabPageAdministracion.Controls.Add(this.lblcodigo);
             this.tabPageAdministracion.Controls.Add(this.btneliminar);
             this.tabPageAdministracion.Controls.Add(this.btnmodificar);
             this.tabPageAdministracion.Controls.Add(this.btnagregar);
@@ -116,6 +118,10 @@
             // 
             // tabPageBusqueda
             // 
+            this.tabPageBusqueda.Controls.Add(this.txtbuscarcodigo);
+            this.tabPageBusqueda.Controls.Add(this.lblBcodigo);
+            this.tabPageBusqueda.Controls.Add(this.btnlimpiar);
+            this.tabPageBusqueda.Controls.Add(this.btbuscar);
             this.tabPageBusqueda.Controls.Add(this.dataGridView1);
             this.tabPageBusqueda.Location = new System.Drawing.Point(4, 22);
             this.tabPageBusqueda.Name = "tabPageBusqueda";
@@ -215,22 +221,13 @@
             this.txtPnombre.Size = new System.Drawing.Size(100, 20);
             this.txtPnombre.TabIndex = 41;
             // 
-            // txtclave
+            // txtcodigo
             // 
-            this.txtclave.Location = new System.Drawing.Point(90, 12);
-            this.txtclave.MaxLength = 4;
-            this.txtclave.Name = "txtclave";
-            this.txtclave.Size = new System.Drawing.Size(64, 20);
-            this.txtclave.TabIndex = 40;
-            // 
-            // btbuscar
-            // 
-            this.btbuscar.Location = new System.Drawing.Point(17, 341);
-            this.btbuscar.Name = "btbuscar";
-            this.btbuscar.Size = new System.Drawing.Size(75, 23);
-            this.btbuscar.TabIndex = 39;
-            this.btbuscar.Text = "Buscar";
-            this.btbuscar.UseVisualStyleBackColor = true;
+            this.txtcodigo.Location = new System.Drawing.Point(90, 12);
+            this.txtcodigo.MaxLength = 4;
+            this.txtcodigo.Name = "txtcodigo";
+            this.txtcodigo.Size = new System.Drawing.Size(64, 20);
+            this.txtcodigo.TabIndex = 40;
             // 
             // label1
             // 
@@ -295,14 +292,14 @@
             this.lblPnombre.TabIndex = 32;
             this.lblPnombre.Text = "1er Nombre:";
             // 
-            // lblclave
+            // lblcodigo
             // 
-            this.lblclave.AutoSize = true;
-            this.lblclave.Location = new System.Drawing.Point(4, 12);
-            this.lblclave.Name = "lblclave";
-            this.lblclave.Size = new System.Drawing.Size(37, 13);
-            this.lblclave.TabIndex = 31;
-            this.lblclave.Text = "Clave:";
+            this.lblcodigo.AutoSize = true;
+            this.lblcodigo.Location = new System.Drawing.Point(4, 12);
+            this.lblcodigo.Name = "lblcodigo";
+            this.lblcodigo.Size = new System.Drawing.Size(43, 13);
+            this.lblcodigo.TabIndex = 31;
+            this.lblcodigo.Text = "Código:";
             // 
             // btneliminar
             // 
@@ -315,7 +312,7 @@
             // 
             // btnmodificar
             // 
-            this.btnmodificar.Location = new System.Drawing.Point(156, 342);
+            this.btnmodificar.Location = new System.Drawing.Point(248, 341);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(75, 23);
             this.btnmodificar.TabIndex = 29;
@@ -324,7 +321,7 @@
             // 
             // btnagregar
             // 
-            this.btnagregar.Location = new System.Drawing.Point(313, 341);
+            this.btnagregar.Location = new System.Drawing.Point(46, 341);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(75, 23);
             this.btnagregar.TabIndex = 28;
@@ -370,6 +367,41 @@
             this.lblTnombre.TabIndex = 55;
             this.lblTnombre.Text = "3er Nombre:";
             // 
+            // btbuscar
+            // 
+            this.btbuscar.Location = new System.Drawing.Point(317, 16);
+            this.btbuscar.Name = "btbuscar";
+            this.btbuscar.Size = new System.Drawing.Size(75, 23);
+            this.btbuscar.TabIndex = 40;
+            this.btbuscar.Text = "Buscar";
+            this.btbuscar.UseVisualStyleBackColor = true;
+            // 
+            // btnlimpiar
+            // 
+            this.btnlimpiar.Location = new System.Drawing.Point(422, 16);
+            this.btnlimpiar.Name = "btnlimpiar";
+            this.btnlimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnlimpiar.TabIndex = 41;
+            this.btnlimpiar.Text = "Limpiar";
+            this.btnlimpiar.UseVisualStyleBackColor = true;
+            // 
+            // txtbuscarcodigo
+            // 
+            this.txtbuscarcodigo.Location = new System.Drawing.Point(129, 18);
+            this.txtbuscarcodigo.MaxLength = 4;
+            this.txtbuscarcodigo.Name = "txtbuscarcodigo";
+            this.txtbuscarcodigo.Size = new System.Drawing.Size(64, 20);
+            this.txtbuscarcodigo.TabIndex = 43;
+            // 
+            // lblBcodigo
+            // 
+            this.lblBcodigo.AutoSize = true;
+            this.lblBcodigo.Location = new System.Drawing.Point(44, 21);
+            this.lblBcodigo.Name = "lblBcodigo";
+            this.lblBcodigo.Size = new System.Drawing.Size(43, 13);
+            this.lblBcodigo.TabIndex = 42;
+            this.lblBcodigo.Text = "Código:";
+            // 
             // ClientesCont
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -382,6 +414,7 @@
             this.tabPageAdministracion.ResumeLayout(false);
             this.tabPageAdministracion.PerformLayout();
             this.tabPageBusqueda.ResumeLayout(false);
+            this.tabPageBusqueda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -404,8 +437,7 @@
         private System.Windows.Forms.TextBox txtDui;
         private System.Windows.Forms.TextBox txtPapellido;
         private System.Windows.Forms.TextBox txtPnombre;
-        private System.Windows.Forms.TextBox txtclave;
-        private System.Windows.Forms.Button btbuscar;
+        private System.Windows.Forms.TextBox txtcodigo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -413,12 +445,16 @@
         private System.Windows.Forms.Label lblPapellido;
         private System.Windows.Forms.Label lblSnombre;
         private System.Windows.Forms.Label lblPnombre;
-        private System.Windows.Forms.Label lblclave;
+        private System.Windows.Forms.Label lblcodigo;
         private System.Windows.Forms.Button btneliminar;
         private System.Windows.Forms.Button btnmodificar;
         private System.Windows.Forms.Button btnagregar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txttercernombre;
         private System.Windows.Forms.Label lblTnombre;
+        private System.Windows.Forms.TextBox txtbuscarcodigo;
+        private System.Windows.Forms.Label lblBcodigo;
+        private System.Windows.Forms.Button btnlimpiar;
+        private System.Windows.Forms.Button btbuscar;
     }
 }
