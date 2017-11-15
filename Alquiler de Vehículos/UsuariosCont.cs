@@ -16,5 +16,10 @@ namespace Alquiler_de_Vehículos
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
