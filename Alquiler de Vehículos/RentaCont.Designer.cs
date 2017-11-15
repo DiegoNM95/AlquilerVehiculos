@@ -1,6 +1,6 @@
 ﻿namespace Alquiler_de_Vehículos
 {
-	partial class ClientesCont
+	partial class RentaCont
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -30,7 +30,7 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Text = "ClientesCont";
+			this.Text = "RentaCont";
 		}
 
 		#endregion

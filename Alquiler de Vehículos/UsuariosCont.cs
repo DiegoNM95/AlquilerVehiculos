@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Alquiler_de_Vehículos
 {
-	public partial class ClientesCont : Form
+	public partial class UsuariosCont : Form
 	{
-		public ClientesCont()
+		public UsuariosCont()
 		{
 			InitializeComponent();
 		}
