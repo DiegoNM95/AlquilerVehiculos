@@ -44,7 +44,7 @@
             this.txtPapellido = new System.Windows.Forms.TextBox();
             this.txtPnombre = new System.Windows.Forms.TextBox();
             this.txtclave = new System.Windows.Forms.TextBox();
-            this.btnlimpiar = new System.Windows.Forms.Button();
+            this.btbuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -94,7 +94,7 @@
             this.tabPageAdministracion.Controls.Add(this.txtPapellido);
             this.tabPageAdministracion.Controls.Add(this.txtPnombre);
             this.tabPageAdministracion.Controls.Add(this.txtclave);
-            this.tabPageAdministracion.Controls.Add(this.btnlimpiar);
+            this.tabPageAdministracion.Controls.Add(this.btbuscar);
             this.tabPageAdministracion.Controls.Add(this.label1);
             this.tabPageAdministracion.Controls.Add(this.label7);
             this.tabPageAdministracion.Controls.Add(this.label6);
@@ -120,7 +120,7 @@
             this.tabPageBusqueda.Location = new System.Drawing.Point(4, 22);
             this.tabPageBusqueda.Name = "tabPageBusqueda";
             this.tabPageBusqueda.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageBusqueda.Size = new System.Drawing.Size(475, 377);
+            this.tabPageBusqueda.Size = new System.Drawing.Size(582, 377);
             this.tabPageBusqueda.TabIndex = 1;
             this.tabPageBusqueda.Text = "Búsqueda";
             this.tabPageBusqueda.UseVisualStyleBackColor = true;
@@ -223,14 +223,14 @@
             this.txtclave.Size = new System.Drawing.Size(64, 20);
             this.txtclave.TabIndex = 40;
             // 
-            // btnlimpiar
+            // btbuscar
             // 
-            this.btnlimpiar.Location = new System.Drawing.Point(251, 341);
-            this.btnlimpiar.Name = "btnlimpiar";
-            this.btnlimpiar.Size = new System.Drawing.Size(75, 23);
-            this.btnlimpiar.TabIndex = 39;
-            this.btnlimpiar.Text = "Limpiar";
-            this.btnlimpiar.UseVisualStyleBackColor = true;
+            this.btbuscar.Location = new System.Drawing.Point(17, 341);
+            this.btbuscar.Name = "btbuscar";
+            this.btbuscar.Size = new System.Drawing.Size(75, 23);
+            this.btbuscar.TabIndex = 39;
+            this.btbuscar.Text = "Buscar";
+            this.btbuscar.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -306,7 +306,7 @@
             // 
             // btneliminar
             // 
-            this.btneliminar.Location = new System.Drawing.Point(361, 341);
+            this.btneliminar.Location = new System.Drawing.Point(459, 341);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(75, 23);
             this.btneliminar.TabIndex = 30;
@@ -315,7 +315,7 @@
             // 
             // btnmodificar
             // 
-            this.btnmodificar.Location = new System.Drawing.Point(129, 341);
+            this.btnmodificar.Location = new System.Drawing.Point(156, 342);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(75, 23);
             this.btnmodificar.TabIndex = 29;
@@ -324,7 +324,7 @@
             // 
             // btnagregar
             // 
-            this.btnagregar.Location = new System.Drawing.Point(8, 341);
+            this.btnagregar.Location = new System.Drawing.Point(313, 341);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(75, 23);
             this.btnagregar.TabIndex = 28;
@@ -336,7 +336,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(27, 54);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(409, 290);
+            this.dataGridView1.Size = new System.Drawing.Size(513, 290);
             this.dataGridView1.TabIndex = 0;
             // 
             // cbtipolicencia
@@ -405,7 +405,7 @@
         private System.Windows.Forms.TextBox txtPapellido;
         private System.Windows.Forms.TextBox txtPnombre;
         private System.Windows.Forms.TextBox txtclave;
-        private System.Windows.Forms.Button btnlimpiar;
+        private System.Windows.Forms.Button btbuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
