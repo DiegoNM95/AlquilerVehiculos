@@ -16,5 +16,35 @@ namespace Alquiler_de_Vehículos
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void RentaCont_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnregistro_Click(object sender, EventArgs e)
+        {
+            
+        }
+    }
 }
