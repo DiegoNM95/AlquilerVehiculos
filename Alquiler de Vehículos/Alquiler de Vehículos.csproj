@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientesCont.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientesCont.Designer.cs">
+      <DependentUpon>ClientesCont.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConfiguracionCont.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,8 +69,32 @@
     <Compile Include="PantallaPrincipal.Designer.cs">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="PreciosCont.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreciosCont.Designer.cs">
+      <DependentUpon>PreciosCont.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RentaCont.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RentaCont.Designer.cs">
+      <DependentUpon>RentaCont.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosCont.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuariosCont.Designer.cs">
+      <DependentUpon>UsuariosCont.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehiculosCont.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehiculosCont.Designer.cs">
+      <DependentUpon>VehiculosCont.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ConfiguracionCont.resx">
       <DependentUpon>ConfiguracionCont.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +138,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\precio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\vehiculos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\usuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\renta.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
