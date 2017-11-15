@@ -95,6 +95,9 @@
     <Compile Include="VehiculosCont.Designer.cs">
       <DependentUpon>VehiculosCont.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ClientesCont.resx">
+      <DependentUpon>ClientesCont.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConfiguracionCont.resx">
       <DependentUpon>ConfiguracionCont.cs</DependentUpon>
     </EmbeddedResource>
