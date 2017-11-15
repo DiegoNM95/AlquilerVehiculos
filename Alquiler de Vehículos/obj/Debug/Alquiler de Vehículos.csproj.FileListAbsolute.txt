@@ -21,3 +21,4 @@ C:\Users\USER\Desktop\Laboratorio4\Alquiler de Vehículos\obj\Debug\Alquiler_de_
 C:\Users\USER\Desktop\Laboratorio4\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.frmprincipal.resources
 C:\Users\USER\Desktop\Laboratorio4\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.Properties.Resources.resources
 C:\Users\USER\Desktop\Laboratorio4\Alquiler de Vehículos\obj\Debug\Alquiler de Vehículos.csproj.GenerateResource.Cache
+C:\Users\USER\Desktop\Laboratorio4\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.ClientesCont.resources
