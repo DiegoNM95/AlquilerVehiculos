@@ -31,5 +31,10 @@ namespace Alquiler_de_Vehículos
         {
 
         }
+
+        private void btbuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
