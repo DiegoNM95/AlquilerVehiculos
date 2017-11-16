@@ -78,7 +78,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(649, 295);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Crear nuevo usuario";
+            this.tabPage1.Text = "Administración de usuarios";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
@@ -164,9 +164,9 @@
             // 
             this.btbcrear.Location = new System.Drawing.Point(25, 181);
             this.btbcrear.Name = "btbcrear";
-            this.btbcrear.Size = new System.Drawing.Size(75, 23);
+            this.btbcrear.Size = new System.Drawing.Size(105, 23);
             this.btbcrear.TabIndex = 6;
-            this.btbcrear.Text = "Crear usuario";
+            this.btbcrear.Text = "Crear";
             this.btbcrear.UseVisualStyleBackColor = true;
             // 
             // btblimpiar
@@ -175,7 +175,7 @@
             this.btblimpiar.Name = "btblimpiar";
             this.btblimpiar.Size = new System.Drawing.Size(75, 23);
             this.btblimpiar.TabIndex = 7;
-            this.btblimpiar.Text = "Borrar";
+            this.btblimpiar.Text = "Limpiar";
             this.btblimpiar.UseVisualStyleBackColor = true;
             // 
             // lbltipousuario
