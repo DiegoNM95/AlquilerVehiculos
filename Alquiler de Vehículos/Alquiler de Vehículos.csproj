@@ -89,6 +89,7 @@
     <Compile Include="UsuariosCont.Designer.cs">
       <DependentUpon>UsuariosCont.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validaciones.cs" />
     <Compile Include="VehiculosCont.cs">
       <SubType>Form</SubType>
     </Compile>

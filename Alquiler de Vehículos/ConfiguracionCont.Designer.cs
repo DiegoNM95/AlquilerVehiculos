@@ -28,19 +28,32 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.txtprueba = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
+			// 
+			// txtprueba
+			// 
+			this.txtprueba.Location = new System.Drawing.Point(306, 79);
+			this.txtprueba.Name = "txtprueba";
+			this.txtprueba.Size = new System.Drawing.Size(270, 22);
+			this.txtprueba.TabIndex = 0;
+			this.txtprueba.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprueba_KeyPress);
 			// 
 			// ConfiguracionCont
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(908, 539);
+			this.Controls.Add(this.txtprueba);
 			this.Name = "ConfiguracionCont";
 			this.Text = "AV | Configuración";
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
 		#endregion
+
+		private System.Windows.Forms.TextBox txtprueba;
 	}
 }
