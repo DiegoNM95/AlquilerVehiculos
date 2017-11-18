@@ -9,10 +9,10 @@ namespace Alquiler_de_Vehículos
 {
 	public class Validaciones
 	{
-		public TextBox GetTextBox { get; set; }
+		//public TextBox GetTextBox { get; set; }
 
-		//Metodo de validaciones de texboxs
-		public static Boolean TexBox(int caso, TextBox txt, char k)
+		//Metodo de validaciones de contenido de texboxs
+		public static Boolean TexBoxContent(int caso, TextBox txt, char k)
 		{
 			if (caso == 1)//VALDIDACION ENTEROS POSITIVOS
 			{
@@ -73,6 +73,17 @@ namespace Alquiler_de_Vehículos
 				}
 			}
 			return true;
+		}
+
+		//Método de texbox vacíos
+		public static Boolean TexBoxEmpty(TextBox textBox)
+		{
+			if (textBox.Text != "")
+			{
+				return true;
+			}
+			textBox.Focus();
+			return false;
 		}
 	}
 }
