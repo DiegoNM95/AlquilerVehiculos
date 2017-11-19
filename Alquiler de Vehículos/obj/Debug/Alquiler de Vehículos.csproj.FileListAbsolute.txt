@@ -10,15 +10,6 @@ C:\Users\ludie\OneDrive\UFG\Ciclo-06\PRG2\Projects C#\Alquiler de Vehículos\Alq
 C:\Users\ludie\OneDrive\UFG\Ciclo-06\PRG2\Projects C#\Alquiler de Vehículos\Alquiler de Vehículos\obj\Debug\Alquiler de Vehículos.pdb
 C:\Users\ludie\OneDrive\UFG\Ciclo-06\PRG2\Projects C#\Alquiler de Vehículos\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.frmprincipal.resources
 C:\Users\ludie\OneDrive\UFG\Ciclo-06\PRG2\Projects C#\Alquiler de Vehículos\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.ConfiguracionCont.resources
-C:\Users\pc\Desktop\Laboratorio4\Alquiler de Vehículos\bin\Debug\Alquiler de Vehículos.exe.config
-C:\Users\pc\Desktop\Laboratorio4\Alquiler de Vehículos\bin\Debug\Alquiler de Vehículos.exe
-C:\Users\pc\Desktop\Laboratorio4\Alquiler de Vehículos\bin\Debug\Alquiler de Vehículos.pdb
-C:\Users\pc\Desktop\Laboratorio4\Alquiler de Vehículos\obj\Debug\Alquiler de Vehículos.csprojResolveAssemblyReference.cache
-C:\Users\pc\Desktop\Laboratorio4\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.ConfiguracionCont.resources
-C:\Users\pc\Desktop\Laboratorio4\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.frmlogin.resources
-C:\Users\pc\Desktop\Laboratorio4\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.frmprincipal.resources
-C:\Users\pc\Desktop\Laboratorio4\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.Properties.Resources.resources
-C:\Users\pc\Desktop\Laboratorio4\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.UsuariosCont.resources
-C:\Users\pc\Desktop\Laboratorio4\Alquiler de Vehículos\obj\Debug\Alquiler de Vehículos.csproj.GenerateResource.Cache
-C:\Users\pc\Desktop\Laboratorio4\Alquiler de Vehículos\obj\Debug\Alquiler de Vehículos.exe
-C:\Users\pc\Desktop\Laboratorio4\Alquiler de Vehículos\obj\Debug\Alquiler de Vehículos.pdb
+C:\Users\Cesar Kevin Sanchez\Source\Repos\AlquilerVehiculos\Alquiler de Vehículos\bin\Debug\Alquiler de Vehículos.exe.config
+C:\Users\Cesar Kevin Sanchez\Source\Repos\AlquilerVehiculos\Alquiler de Vehículos\obj\Debug\Alquiler de Vehículos.exe
+C:\Users\Cesar Kevin Sanchez\Source\Repos\AlquilerVehiculos\Alquiler de Vehículos\obj\Debug\Alquiler de Vehículos.pdb
