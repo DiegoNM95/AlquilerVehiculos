@@ -84,6 +84,7 @@
 			this.btnrenta.Size = new System.Drawing.Size(244, 142);
 			this.btnrenta.TabIndex = 6;
 			this.btnrenta.UseVisualStyleBackColor = false;
+			this.btnrenta.Click += new System.EventHandler(this.btnrenta_Click);
 			// 
 			// btnusuarios
 			// 
@@ -95,6 +96,7 @@
 			this.btnusuarios.Size = new System.Drawing.Size(244, 142);
 			this.btnusuarios.TabIndex = 3;
 			this.btnusuarios.UseVisualStyleBackColor = false;
+			this.btnusuarios.Click += new System.EventHandler(this.btnusuarios_Click);
 			// 
 			// btnvehiculos
 			// 
@@ -106,6 +108,7 @@
 			this.btnvehiculos.Size = new System.Drawing.Size(244, 142);
 			this.btnvehiculos.TabIndex = 2;
 			this.btnvehiculos.UseVisualStyleBackColor = false;
+			this.btnvehiculos.Click += new System.EventHandler(this.btnvehiculos_Click);
 			// 
 			// btnprecios
 			// 
@@ -117,6 +120,7 @@
 			this.btnprecios.Size = new System.Drawing.Size(244, 142);
 			this.btnprecios.TabIndex = 1;
 			this.btnprecios.UseVisualStyleBackColor = false;
+			this.btnprecios.Click += new System.EventHandler(this.btnprecios_Click);
 			// 
 			// btnclientes
 			// 
@@ -128,6 +132,7 @@
 			this.btnclientes.Size = new System.Drawing.Size(244, 142);
 			this.btnclientes.TabIndex = 0;
 			this.btnclientes.UseVisualStyleBackColor = false;
+			this.btnclientes.Click += new System.EventHandler(this.btnclientes_Click);
 			// 
 			// lblclientes
 			// 
