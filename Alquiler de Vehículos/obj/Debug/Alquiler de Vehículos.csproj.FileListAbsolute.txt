@@ -23,3 +23,5 @@ C:\Users\ACP\Desktop\Proyecto\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehí
 C:\Users\ACP\Desktop\Proyecto\Alquiler de Vehículos\obj\Debug\Alquiler de Vehículos.csproj.GenerateResource.Cache
 C:\Users\ACP\Desktop\Proyecto\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.PreciosCont.resources
 C:\Users\ACP\Desktop\Proyecto\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.VehiculosCont.resources
+C:\Users\ludie\OneDrive\UFG\Ciclo-06\PRG2\Projects C#\Alquiler de Vehículos\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.PreciosCont.resources
+C:\Users\ludie\OneDrive\UFG\Ciclo-06\PRG2\Projects C#\Alquiler de Vehículos\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.VehiculosCont.resources
