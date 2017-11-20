@@ -64,5 +64,10 @@ namespace Alquiler_de_Vehículos
 			usuariosCont.ShowDialog();
 			this.Close();
 		}
+
+		private void frmprincipal_Load(object sender, EventArgs e)
+		{
+			lblnameuser.Text = Usuario.UsuarioEtiqueta;
+		}
 	}
 }

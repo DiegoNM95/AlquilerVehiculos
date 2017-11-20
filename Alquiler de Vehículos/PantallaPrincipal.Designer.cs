@@ -234,6 +234,7 @@
 			this.Name = "frmprincipal";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "AV";
+			this.Load += new System.EventHandler(this.frmprincipal_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
