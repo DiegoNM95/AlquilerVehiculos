@@ -118,17 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnEntrar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnentrar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnEntrar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>283, 46</value>
+  <data name="btnentrar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 266</value>
   </data>
-  <data name="btnEntrar.Text" xml:space="preserve">
+  <data name="btnentrar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>591, 46</value>
+  </data>
+  <data name="btnentrar.Text" xml:space="preserve">
     <value>Entrar</value>
-  </data>
-  <data name="button2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
 </root>

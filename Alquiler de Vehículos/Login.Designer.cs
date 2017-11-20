@@ -35,8 +35,7 @@
 			this.lblcontra = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.btnEntrar = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
+			this.btnentrar = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
@@ -63,42 +62,35 @@
 			// 
 			// panel1
 			// 
-			resources.ApplyResources(this.panel1, "panel1");
 			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.panel1.Controls.Add(this.pictureBox1);
 			this.panel1.Controls.Add(this.lblusuario);
 			this.panel1.Controls.Add(this.txtusuario);
 			this.panel1.Controls.Add(this.lblcontra);
 			this.panel1.Controls.Add(this.txtcontra);
+			resources.ApplyResources(this.panel1, "panel1");
 			this.panel1.Name = "panel1";
 			// 
 			// pictureBox1
 			// 
-			resources.ApplyResources(this.pictureBox1, "pictureBox1");
 			this.pictureBox1.Image = global::Alquiler_de_Vehículos.Properties.Resources.locked;
+			resources.ApplyResources(this.pictureBox1, "pictureBox1");
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.TabStop = false;
 			// 
-			// btnEntrar
+			// btnentrar
 			// 
-			resources.ApplyResources(this.btnEntrar, "btnEntrar");
-			this.btnEntrar.Name = "btnEntrar";
-			this.btnEntrar.UseVisualStyleBackColor = true;
-			this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click_1);
-			// 
-			// button2
-			// 
-			resources.ApplyResources(this.button2, "button2");
-			this.button2.Name = "button2";
-			this.button2.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.btnentrar, "btnentrar");
+			this.btnentrar.Name = "btnentrar";
+			this.btnentrar.UseVisualStyleBackColor = true;
+			this.btnentrar.Click += new System.EventHandler(this.btnentrar_Click);
 			// 
 			// frmlogin
 			// 
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.btnEntrar);
 			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.button2);
+			this.Controls.Add(this.btnentrar);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
@@ -118,8 +110,7 @@
 		private System.Windows.Forms.Label lblcontra;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Button btnEntrar;
-		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button btnentrar;
 	}
 }
 
