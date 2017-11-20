@@ -67,7 +67,7 @@ namespace Alquiler_de_Vehículos
 
 		private void frmprincipal_Load(object sender, EventArgs e)
 		{
-
+			lblnameuser.Text = Usuario.UsuarioEtiqueta;
 		}
 	}
 }
