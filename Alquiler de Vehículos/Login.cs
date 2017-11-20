@@ -12,17 +12,18 @@ namespace Alquiler_de_Vehículos
 {
 	public partial class frmlogin : Form
 	{
+		Usuario usuario = new Usuario();
 		public frmlogin()
 		{
 			InitializeComponent();
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void btnEntrar_Click_1(object sender, EventArgs e)
 		{
-			frmprincipal frmprincipal = new frmprincipal();
-			this.Hide();
-			frmprincipal.ShowDialog();
-			this.Close();
+			usuario.NombreUsuario = txtusuario.Text;
+			usuario.Contraseña = txtcontra.Text;
+			frmprincipal destino = new frmprincipal();
+			usuario.Loguear(this, destino);
 		}
 	}
 }
