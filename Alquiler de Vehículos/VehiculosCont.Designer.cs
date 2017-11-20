@@ -55,20 +55,23 @@
             this.btnbuscarlistado = new System.Windows.Forms.Button();
             this.txtbuscarlistado = new System.Windows.Forms.TextBox();
             this.dgvlistadodeautos = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnregresar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistadodeautos)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 1);
+            this.tabControl1.Location = new System.Drawing.Point(0, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(791, 395);
+            this.tabControl1.Size = new System.Drawing.Size(791, 384);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -97,7 +100,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(783, 369);
+            this.tabPage1.Size = new System.Drawing.Size(783, 358);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Administración";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -237,7 +240,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(783, 369);
+            this.tabPage2.Size = new System.Drawing.Size(783, 334);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Listado de autos";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -315,11 +318,37 @@
             this.dgvlistadodeautos.Size = new System.Drawing.Size(748, 235);
             this.dgvlistadodeautos.TabIndex = 2;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.btnregresar, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(755, 1);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(36, 33);
+            this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // btnregresar
+            // 
+            this.btnregresar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnregresar.BackgroundImage = global::Alquiler_de_Vehículos.Properties.Resources.left_arrow;
+            this.btnregresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnregresar.Location = new System.Drawing.Point(3, 3);
+            this.btnregresar.Name = "btnregresar";
+            this.btnregresar.Size = new System.Drawing.Size(29, 23);
+            this.btnregresar.TabIndex = 0;
+            this.btnregresar.UseVisualStyleBackColor = false;
+            // 
             // VehiculosCont
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 387);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tabControl1);
             this.Name = "VehiculosCont";
             this.Text = "VehiculosCont";
@@ -329,6 +358,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlistadodeautos)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -362,5 +392,7 @@
         private System.Windows.Forms.DataGridView dgvlistadodeautos;
         private System.Windows.Forms.TextBox txtbuscarlistado;
         private System.Windows.Forms.Button btnbuscarlistado;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button btnregresar;
     }
 }
