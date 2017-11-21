@@ -35,9 +35,9 @@ namespace Alquiler_de_Vehículos
 
 		private void btnclientes_Click(object sender, EventArgs e)
 		{
-			ClientesCont clientesCont = new ClientesCont();
+			ClientesCont clientes = new ClientesCont();
 			this.Hide();
-			clientesCont.ShowDialog();
+			clientes.ShowDialog();
 			this.Close();
 		}
 
