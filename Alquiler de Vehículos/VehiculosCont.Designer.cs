@@ -250,7 +250,6 @@
             this.lblplaca.Size = new System.Drawing.Size(37, 13);
             this.lblplaca.TabIndex = 21;
             this.lblplaca.Text = "Placa:";
-            this.lblplaca.Click += new System.EventHandler(this.label9_Click);
             // 
             // txtplaca
             // 
