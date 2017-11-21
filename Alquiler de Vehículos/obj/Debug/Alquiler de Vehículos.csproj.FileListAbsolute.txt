@@ -16,3 +16,4 @@ C:\Users\Cesar Kevin Sanchez\Source\Repos\AlquilerVehiculos\Alquiler de Vehícul
 C:\Users\ludie\OneDrive\UFG\Ciclo-06\PRG2\Projects C#\Alquiler de Vehículos\Alquiler de Vehículos\bin\Debug\es-SV\Alquiler de Vehículos.resources.dll
 C:\Users\ludie\OneDrive\UFG\Ciclo-06\PRG2\Projects C#\Alquiler de Vehículos\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.frmlogin.es-SV.resources
 C:\Users\ludie\OneDrive\UFG\Ciclo-06\PRG2\Projects C#\Alquiler de Vehículos\Alquiler de Vehículos\obj\Debug\es-SV\Alquiler de Vehículos.resources.dll
+C:\Users\ludie\OneDrive\UFG\Ciclo-06\PRG2\Projects C#\Alquiler de Vehículos\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.ClientesCont.resources
