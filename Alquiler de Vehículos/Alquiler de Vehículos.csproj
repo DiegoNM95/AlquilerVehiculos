@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -98,6 +99,9 @@
     <Compile Include="VehiculosCont.Designer.cs">
       <DependentUpon>VehiculosCont.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ClientesCont.resx">
+      <DependentUpon>ClientesCont.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConfiguracionCont.resx">
       <DependentUpon>ConfiguracionCont.cs</DependentUpon>
     </EmbeddedResource>
