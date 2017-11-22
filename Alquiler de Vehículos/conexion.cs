@@ -30,6 +30,8 @@ namespace Alquiler_de_Vehículos
 			}
 		}
 
+
+		//Logueo del usuario
 		public Boolean LoguearUsuario(String usuario, String contra)
 		{
 			try
@@ -49,6 +51,42 @@ namespace Alquiler_de_Vehículos
 			catch(Exception ex)
 			{
 				MessageBox.Show("Datos ingresados incorrectos: " + ex.ToString());
+			}
+			return false;
+		}
+
+		//Métodos de CLIENTES
+		//Agregar Clientes
+		public String AgregarClientes(String dui, String nit, String nombre1, String nombre2, String nombre3, String apellido1, String apellido2, String nacimiento, String direccion, String email, String tipolicencia, int telefono)
+		{
+			String salida = "Cliente agregado con exito";
+			try
+			{
+				cmd = new SqlCommand("Insert Into Clientes([DUI],[NIT],[Nombre1],[Nombre2],[Nombre3],[Apellido1],[Apellido2],[Nacimiento],[Direccion],[Correo],[Tipolicencia],[Telefono]) Values('"+dui+"','"+nit+"','"+nombre1+"','"+nombre2+"','"+nombre3+"','"+apellido1+"','"+apellido2+"','"+nacimiento+"','"+direccion+"','"+email+"','"+tipolicencia+"',"+telefono+")", cn);
+				cmd.ExecuteNonQuery();
+			}
+			catch (Exception ex)
+			{
+				return salida = "Cliente no agregado. \t\n" + ex.ToString();
+			}
+			return salida;
+		}
+		//Validación de cliente existente
+		public Boolean VClienteExistente(String dui)
+		{
+			try
+			{
+				cmd = new SqlCommand("Select * From Clientes Where [DUI] = '" + dui + "'", cn);
+				dr = cmd.ExecuteReader();
+				while (dr.Read())
+				{
+					return true;
+				}
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("No se pudo realizar la consulta: \t\n" + ex.ToString());
 			}
 			return false;
 		}

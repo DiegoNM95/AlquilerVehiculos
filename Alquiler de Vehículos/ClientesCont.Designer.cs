@@ -68,6 +68,7 @@
 			this.txtbuscarcodigo = new System.Windows.Forms.TextBox();
 			this.dtgListadoClientes = new System.Windows.Forms.DataGridView();
 			this.mstAtajos = new System.Windows.Forms.MenuStrip();
+			this.stsRegresar = new System.Windows.Forms.ToolStripMenuItem();
 			this.t.SuspendLayout();
 			this.tbpAdminClientes.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
@@ -78,17 +79,18 @@
 			this.tbpListadoClientes.SuspendLayout();
 			this.gbxBusqueda.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dtgListadoClientes)).BeginInit();
+			this.mstAtajos.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// t
 			// 
 			this.t.Controls.Add(this.tbpAdminClientes);
 			this.t.Controls.Add(this.tbpListadoClientes);
-			this.t.Location = new System.Drawing.Point(0, 28);
+			this.t.Location = new System.Drawing.Point(0, 32);
 			this.t.Margin = new System.Windows.Forms.Padding(4);
 			this.t.Name = "t";
 			this.t.SelectedIndex = 0;
-			this.t.Size = new System.Drawing.Size(794, 468);
+			this.t.Size = new System.Drawing.Size(794, 464);
 			this.t.TabIndex = 20;
 			// 
 			// tbpAdminClientes
@@ -102,7 +104,7 @@
 			this.tbpAdminClientes.Margin = new System.Windows.Forms.Padding(4);
 			this.tbpAdminClientes.Name = "tbpAdminClientes";
 			this.tbpAdminClientes.Padding = new System.Windows.Forms.Padding(4);
-			this.tbpAdminClientes.Size = new System.Drawing.Size(786, 439);
+			this.tbpAdminClientes.Size = new System.Drawing.Size(786, 435);
 			this.tbpAdminClientes.TabIndex = 0;
 			this.tbpAdminClientes.Text = "Administración de Clientes";
 			this.tbpAdminClientes.UseVisualStyleBackColor = true;
@@ -145,6 +147,7 @@
 			this.btnagregar.TabIndex = 28;
 			this.btnagregar.Text = "Agregar";
 			this.btnagregar.UseVisualStyleBackColor = true;
+			this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
 			// 
 			// btnborrar
 			// 
@@ -254,6 +257,7 @@
 			// 
 			// dtpNacimiento
 			// 
+			this.dtpNacimiento.CustomFormat = "";
 			this.dtpNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
 			this.dtpNacimiento.Location = new System.Drawing.Point(553, 53);
 			this.dtpNacimiento.Margin = new System.Windows.Forms.Padding(4);
@@ -458,7 +462,7 @@
 			this.tbpListadoClientes.Margin = new System.Windows.Forms.Padding(4);
 			this.tbpListadoClientes.Name = "tbpListadoClientes";
 			this.tbpListadoClientes.Padding = new System.Windows.Forms.Padding(4);
-			this.tbpListadoClientes.Size = new System.Drawing.Size(786, 439);
+			this.tbpListadoClientes.Size = new System.Drawing.Size(786, 435);
 			this.tbpListadoClientes.TabIndex = 1;
 			this.tbpListadoClientes.Text = "Listado de Clientes";
 			this.tbpListadoClientes.UseVisualStyleBackColor = true;
@@ -494,6 +498,8 @@
 			// mstAtajos
 			// 
 			this.mstAtajos.ImageScalingSize = new System.Drawing.Size(20, 20);
+			this.mstAtajos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stsRegresar});
 			this.mstAtajos.Location = new System.Drawing.Point(0, 0);
 			this.mstAtajos.Name = "mstAtajos";
 			this.mstAtajos.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -501,17 +507,28 @@
 			this.mstAtajos.TabIndex = 21;
 			this.mstAtajos.Text = "Atajos";
 			// 
+			// stsRegresar
+			// 
+			this.stsRegresar.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.stsRegresar.Image = global::Alquiler_de_Vehículos.Properties.Resources.flecha_hacia_la_izquierda;
+			this.stsRegresar.ImageTransparentColor = System.Drawing.Color.DarkGray;
+			this.stsRegresar.Name = "stsRegresar";
+			this.stsRegresar.Size = new System.Drawing.Size(32, 24);
+			this.stsRegresar.Click += new System.EventHandler(this.stsRegresar_Click);
+			// 
 			// ClientesCont
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(791, 492);
+			this.ControlBox = false;
 			this.Controls.Add(this.t);
 			this.Controls.Add(this.mstAtajos);
 			this.MainMenuStrip = this.mstAtajos;
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "ClientesCont";
-			this.Text = "ClientesCont";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "AV | Clientes";
 			this.t.ResumeLayout(false);
 			this.tbpAdminClientes.ResumeLayout(false);
 			this.tbpAdminClientes.PerformLayout();
@@ -528,6 +545,8 @@
 			this.gbxBusqueda.ResumeLayout(false);
 			this.gbxBusqueda.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dtgListadoClientes)).EndInit();
+			this.mstAtajos.ResumeLayout(false);
+			this.mstAtajos.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -574,5 +593,6 @@
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.MenuStrip mstAtajos;
 		private System.Windows.Forms.GroupBox gbxBusqueda;
+		private System.Windows.Forms.ToolStripMenuItem stsRegresar;
 	}
 }
