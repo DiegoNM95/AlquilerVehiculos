@@ -27,10 +27,10 @@ namespace Alquiler_de_Vehículos
 
 		private void txtprueba_Leave(object sender, EventArgs e)
 		{
-			if (!Validaciones.TexBoxEmpty(txtprueba))
+			/*if (!Validaciones.TexBoxEmpty(txtprueba))
 			{
 				MessageBox.Show("Debe ingresar un valor");
-			}
+			}*/
 		}
 
 		private void txtprueba2_KeyPress(object sender, KeyPressEventArgs e)
@@ -43,22 +43,22 @@ namespace Alquiler_de_Vehículos
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			if (Validaciones.TexBoxEmpty(txtprueba) && Validaciones.TexBoxEmpty(txtprueba2))
+			/*if (Validaciones.TexBoxEmpty(txtprueba) && Validaciones.TexBoxEmpty(txtprueba2))
 			{
 				MessageBox.Show("Validación correcta");
 			}
 			else
 			{
 				MessageBox.Show("Validaciones incorrectas, faltan valores.");
-			}
+			}*/
 		}
 
 		private void txtprueba2_Leave(object sender, EventArgs e)
 		{
-			if (!Validaciones.TexBoxEmpty(txtprueba2))
+			/*if (!Validaciones.TexBoxEmpty(txtprueba2))
 			{
 				MessageBox.Show("Debe ingresar un valor");
-			}
+			}*/
 		}
 
 		private void ConfiguracionCont_Load(object sender, EventArgs e)

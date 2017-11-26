@@ -165,5 +165,8 @@
   <ItemGroup>
     <None Include="img\flecha-hacia-la-izquierda.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="img\trash.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
