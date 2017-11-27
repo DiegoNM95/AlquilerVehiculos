@@ -34,3 +34,4 @@ C:\Users\ACP\Desktop\Proyecto\Alquiler de Vehículos\obj\Debug\Alquiler de Vehí
 C:\Users\ACP\Desktop\Proyecto\Alquiler de Vehículos\obj\Debug\es-SV\Alquiler de Vehículos.resources.dll
 C:\Users\ludie\OneDrive\UFG\Ciclo-06\PRG2\Projects C#\Alquiler de Vehículos\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.ClientesCont.resources
 C:\Users\ludie\OneDrive\UFG\Ciclo-06\PRG2\Projects C#\Alquiler de Vehículos\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.RentaCont.resources
+C:\Users\ludie\OneDrive\UFG\Ciclo-06\PRG2\Projects C#\Alquiler de Vehículos\Alquiler de Vehículos\obj\Debug\Alquiler_de_Vehículos.frmVehiculos.resources

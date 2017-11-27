@@ -43,7 +43,7 @@ namespace Alquiler_de_Vehículos
 
 		private void btnvehiculos_Click(object sender, EventArgs e)
 		{
-			VehiculosCont vehiculosCont = new VehiculosCont();
+			frmVehiculos vehiculosCont = new frmVehiculos();
 			this.Hide();
 			vehiculosCont.ShowDialog();
 			this.Close();

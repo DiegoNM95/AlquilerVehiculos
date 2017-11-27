@@ -61,7 +61,7 @@ namespace Alquiler_de_Vehículos
 		//Número de Registros existentes
 		public Int32 CuentaRegistros(String nombretabla, String campo)
 		{
-			Int32 cont = 0;
+			Int32 cont;
 			try
 			{
 				cmd = new SqlCommand("Select MAX("+campo+") As 'Number' From "+nombretabla, cn);
@@ -73,11 +73,29 @@ namespace Alquiler_de_Vehículos
 				}
 				dr.Close();
 			}
+			catch
+			{
+				//MessageBox.Show("No se pudo realizar la consulta a la BD. \t\n" + ex.ToString());
+			}
+			return cont=0;
+		}
+		//Busca los registros de x tabla en un campo definido con el valor asignado, y devuel el valor del campo solicitado
+		public String BusquedaReg(String tabla, String campocondicion, String valor, String campo)
+		{
+			try
+			{
+				cmd = new SqlCommand("Select * From " + tabla + " Where [" + campocondicion + "] = " + valor + "", cn);
+				dr = cmd.ExecuteReader();
+				if (dr.Read())
+				{
+					return dr[campo].ToString();
+				}
+			}
 			catch (Exception ex)
 			{
-				MessageBox.Show("No se pudo realizar la consulta a la BD. \t\n" + ex.ToString());
+				MessageBox.Show("No se pudo realizar la consulta1: \t\n" + ex.ToString());
 			}
-			return cont;
+			return null;
 		}
 		//Numero de registros específicos
 		public Int32 CuentaRegistrosEsp(String nombretabla, String campo, String valor, String campo2, Int32 valor2)
@@ -132,43 +150,6 @@ namespace Alquiler_de_Vehículos
 			}
 			return salida;
 		}
-		//Validación de cliente existente por dui
-		public String VDuiExistente(String dui, String campo)
-		{
-			try
-			{
-				cmd = new SqlCommand("Select * From Clientes Where [DUI] = '" + dui + "'", cn);
-				dr = cmd.ExecuteReader();
-				if (dr.Read())
-				{
-					return dr[campo].ToString();
-				}
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("No se pudo realizar la consulta1: \t\n" + ex.ToString());
-			}
-			return null;
-		}
-		//Validacion de cliente existente por codigo
-		public String VClienteExistente(Int32 codigo, String campo)
-		{
-			try
-			{
-				cmd = new SqlCommand("Select * From Clientes Where [CodigoCLiente] = " + codigo + "", cn);
-				dr = cmd.ExecuteReader();
-				if (dr.Read())
-				{
-					//dr.Close();
-					return dr[campo].ToString();
-				}
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("No se pudo realizar la consulta2: \t\n" + ex.ToString());
-			}
-			return null;
-		}
 
 		//Metodo para madificar cliente
 		public String ActualizacionCliente(Int32 codigo, String dui, String nit, String nombre1, String nombre2, String nombre3, String apellido1, String apellido2, String nacimiento, String direccion, String email, String tipolicencia, int telefono)
@@ -182,12 +163,12 @@ namespace Alquiler_de_Vehículos
 			}
 			catch (Exception ex)
 			{
-				salida = "Datos no agregados. \t\n" + ex.ToString();
+				salida = "Datos no actualizados. \t\n" + ex.ToString();
 			}
 			return salida;
 		}
 		//Metodo para cargar informacion en texbox clientes
-		public String[] CargarTexboxClientes(String dui/*, String nit, String nombre1, String nombre2, String nombre3, String apellido1, String apellido2, String nacimiento, String direccion, String email, String tipolicencia, int telefono*/)
+		public String[] CargarTexboxClientes(String dui)
 		{
 			try
 			{
@@ -207,7 +188,7 @@ namespace Alquiler_de_Vehículos
 			return null;
 		}
 		//Filtrar registros en listado clientes
-		public void FiltrarRegistros(DataGridView dataGrid, String texto)
+		public void FiltrarRegistrosClientes(DataGridView dataGrid, String texto)
 		{
 			da = new SqlDataAdapter("Select * From Clientes Where Nombre1 like '%" + texto + "%' or Nombre2 like '%" + texto + "%' or Nombre3 like '%" + texto + "%' or Apellido1 like '%" + texto + "%' or Apellido2 like '%" + texto + "%' or DUI like '%" + texto + "%' or NIT like '%" + texto + "%'", cn);
 			DataSet ds = new DataSet();
@@ -228,6 +209,84 @@ namespace Alquiler_de_Vehículos
 			catch (Exception ex)
 			{
 				return "El cliente no pudo ser eliminado. \t\n" + ex.ToString();
+			}
+		}
+
+		//////////////////////////////////////////////////////////////METODOS DE VEHICULOS/////////////////////////////////////////////////////////////////////////////////////////////////
+
+		//Agregar Vehiculo
+		public String AgregarVehiculo(Int32 codigo, String placa, String marca, String modelo,String color, Int32 año, String clase, String embrague, String propietario, Double renta)
+		{
+			String salida = "Vehículo agregado con exito";
+			try
+			{
+				cmd = new SqlCommand("Insert Into Vehiculos([CodigoVehiculo],[Placa],[Marca],[Modelo],[Color],[Año],[Clase],[Tipoembrague],[Propietario],[Renta]) Values(" + codigo + ",'" + placa + "','" + marca + "','" + modelo + "','" + color + "'," + año + ",'" + clase + "','" + embrague + "','" + propietario + "'," + renta + ")", cn);
+				cmd.ExecuteNonQuery();
+			}
+			catch (Exception ex)
+			{
+				return salida = "Vehiculo no agregado. \t\n" + ex.ToString();
+			}
+			return salida;
+		}
+		//Metodo para cargar informacion en texbox vehiculos
+		public String[] CargarTexboxVehiculos(String placa)
+		{
+			try
+			{
+				cmd = new SqlCommand("Select * From Vehiculos Where [Placa] = '" + placa + "'", cn);
+				dr = cmd.ExecuteReader();
+				if (dr.Read())
+				{
+					String[] valores = new string[] { dr["CodigoVehiculo"].ToString(), dr["Marca"].ToString(), dr["Modelo"].ToString(), dr["Color"].ToString(), dr["Año"].ToString(), dr["Clase"].ToString(), dr["Tipoembrague"].ToString(), dr["Propietario"].ToString(), dr["Renta"].ToString()};
+					return valores;
+				}
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("No se pudo realizar la consulta a la BD. \t\n" + ex.ToString());
+			}
+			return null;
+		}
+		//Filtrar registros en listado vehiculos
+		public void FiltrarRegistrosVehiculos(DataGridView dataGrid, String texto)
+		{
+			da = new SqlDataAdapter("Select * From Vehiculos Where Placa like '%" + texto + "%' or Marca like '%" + texto + "%' or Modelo like '%" + texto + "%' or Año like '%" + texto + "%' or Clase like '%" + texto + "%' or Tipoembrague like '%" + texto + "%' or Propietario like '%" + texto + "%'", cn);
+			DataSet ds = new DataSet();
+			da.Fill(ds, "Placa");
+			dataGrid.DataSource = ds;
+			dataGrid.DataMember = "Placa";
+		}
+		//Metodo para madificar vehiculo
+		public String ActualizacionVehiculo(Int32 codigo, String placa, String marca, String modelo, String color, Int32 año, String clase, String embrague, String propietario)
+		{
+			String salida = "Datos de cliente actualizados con éxito.";
+			try
+			{
+				cmd = new SqlCommand("UPDATE [Vehiculos] SET [Placa]= '" + placa + "',[Marca] ='" + marca + "',[Modelo] ='" + modelo + "',[Color] ='" + color + "',[Año] ='" + año + "',[Clase] ='" + clase + "',[Tipoembrague] ='" + embrague + "',[Propietario] ='" + propietario + "' WHERE [CodigoVehiculo]=" + codigo + "", cn);
+				cmd.ExecuteNonQuery();
+				return salida;
+			}
+			catch (Exception ex)
+			{
+				salida = "Datos no actualizados. \t\n" + ex.ToString();
+			}
+			return salida;
+		}
+		//Borrar vehiculo
+		public String EliminarVehiculo(Int32 codigo)
+		{
+			try
+			{
+
+				cmd = new SqlCommand("Delete From Vehiculos Where [CodigoVehiculo] = '" + codigo + "'", cn);
+				cmd.ExecuteNonQuery();
+				return "El vehiculo fue eliminado con éxito";
+			}
+			catch (Exception ex)
+			{
+				return "El vehiculo no pudo ser eliminado. \t\n" + ex.ToString();
 			}
 		}
 	}

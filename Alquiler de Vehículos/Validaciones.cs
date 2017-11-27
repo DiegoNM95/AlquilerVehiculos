@@ -9,8 +9,6 @@ namespace Alquiler_de_Vehículos
 {
 	public class Validaciones
 	{
-		//public TextBox GetTextBox { get; set; }
-
 		//Metodo de validaciones de contenido de texboxs
 		public static Boolean TexBoxContent(int caso, TextBox txt, char k)
 		{
@@ -81,7 +79,7 @@ namespace Alquiler_de_Vehículos
 		//Contenido de documentos.
 		public static Boolean VDocument(int caso, TextBox text, Char k)
 		{
-			if (caso == 1)
+			if (caso == 1)//DUI
 			{
 				if (Char.IsNumber(k) || Char.IsControl(k))
 				{
@@ -104,7 +102,7 @@ namespace Alquiler_de_Vehículos
 					text.Focus();
 				}
 			}
-			if (caso == 2)
+			if (caso == 2)//NIT
 			{
 				if (Char.IsNumber(k) || Char.IsControl(k))
 				{
@@ -150,6 +148,34 @@ namespace Alquiler_de_Vehículos
 									text.Text = text.Text + "-";
 									text.Select(text.MaxLength, text.MaxLength);
 								}
+							}
+						}
+					}
+					return true;
+				}
+				else
+				{
+					MessageBox.Show(text, "Solo puede ingresar numeros.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+					text.Focus();
+				}
+			}
+			if (caso == 3)//Número de placa de vehículo
+			{
+				if (Char.IsNumber(k) || Char.IsControl(k))
+				{
+					if (Char.IsNumber(k))
+					{
+						for (int i = 0; i <= text.TextLength; i++)
+						{
+							if (text.TextLength==0)
+							{
+								text.Text = "P";
+								text.Select(text.MaxLength, text.MaxLength);
+							}
+							if (text.TextLength == 4)
+							{
+								text.Text = text.Text + "-";
+								text.Select(text.MaxLength, text.MaxLength);
 							}
 						}
 					}

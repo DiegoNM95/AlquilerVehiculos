@@ -28,7 +28,7 @@ namespace Alquiler_de_Vehículos
 		
 		public void AgregarCliente()
 		{
-			if (conexion.VDuiExistente(DUI,"DUI")==null)
+			if (conexion.BusquedaReg("Clientes","DUI","'"+DUI+"'","DUI")==null)
 			{
 				Codigo = conexion.CuentaRegistros("Clientes","CodigoCliente")+1;
 				MessageBox.Show(conexion.AgregarClientes(Codigo,DUI, NIT, Nombre1, Nombre2, Nombre3, Apellido1, Apellido2, Nacimiento, Direccion, Email, TipoLicencia, Tel));
@@ -41,7 +41,7 @@ namespace Alquiler_de_Vehículos
 
 		public void ActualizarCliente()
 		{
-			if (conexion.VClienteExistente(Codigo, "CodigoCliente")!=null&&conexion.CuentaRegistrosEsp("Clientes","DUI",DUI,"CodigoCliente",Codigo)==0)
+			if (conexion.BusquedaReg("Clientes", "CodigoCliente",Codigo.ToString(),"CodigoCliente")!=null&&conexion.CuentaRegistrosEsp("Clientes","DUI",DUI,"CodigoCliente",Codigo)==0)
 			{
 				MessageBox.Show(conexion.ActualizacionCliente(Codigo, DUI, NIT, Nombre1, Nombre2, Nombre3, Apellido1, Apellido2, Nacimiento, Direccion, Email, TipoLicencia, Tel));
 			}
@@ -53,7 +53,7 @@ namespace Alquiler_de_Vehículos
 
 		public void EliminarCliente()
 		{
-			if (conexion.VClienteExistente(Codigo, "CodigoCliente") != null && Codigo==Convert.ToInt32((conexion.VDuiExistente(DUI,"CodigoCliente"))))
+			if (conexion.BusquedaReg("Clientes", "CodigoCliente",Codigo.ToString(),"CodigoCliente") != null && Codigo==Convert.ToInt32((conexion.BusquedaReg("Clientes","DUI","'"+DUI+"'","CodigoCliente"))))
 			{
 				MessageBox.Show(conexion.EliminarCliente(Codigo));
 			}
@@ -97,7 +97,7 @@ namespace Alquiler_de_Vehículos
 		////Filtrar registros en listado clientes
 		public void Filtrarlistado(DataGridView dataGrid, String texto)
 		{
-			conexion.FiltrarRegistros(dataGrid, texto);
+			conexion.FiltrarRegistrosClientes(dataGrid, texto);
 		}
 	}
 }
