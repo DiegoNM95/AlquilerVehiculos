@@ -72,6 +72,7 @@
 			this.btnconfiguracion.Size = new System.Drawing.Size(244, 142);
 			this.btnconfiguracion.TabIndex = 7;
 			this.btnconfiguracion.UseVisualStyleBackColor = false;
+			this.btnconfiguracion.Visible = false;
 			this.btnconfiguracion.Click += new System.EventHandler(this.btnconfiguracion_Click);
 			// 
 			// btnrenta
@@ -211,6 +212,7 @@
 			this.lblconfiguracion.TabIndex = 15;
 			this.lblconfiguracion.Text = "Configuración";
 			this.lblconfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lblconfiguracion.Visible = false;
 			// 
 			// frmprincipal
 			// 

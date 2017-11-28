@@ -27,7 +27,7 @@ namespace Alquiler_de_Vehículos
 
 		private void btnprecios_Click(object sender, EventArgs e)
 		{
-			PreciosCont preciosCont = new PreciosCont();
+			frmPrecios preciosCont = new frmPrecios();
 			this.Hide();
 			preciosCont.ShowDialog();
 			this.Close();
@@ -51,7 +51,7 @@ namespace Alquiler_de_Vehículos
 
 		private void btnrenta_Click(object sender, EventArgs e)
 		{
-			RentaCont rentaCont = new RentaCont();
+			frmRenta rentaCont = new frmRenta();
 			this.Hide();
 			rentaCont.ShowDialog();
 			this.Close();
@@ -68,6 +68,11 @@ namespace Alquiler_de_Vehículos
 		private void frmprincipal_Load(object sender, EventArgs e)
 		{
 			lblnameuser.Text = Usuario.UsuarioEtiqueta;
+			if (Usuario.TipoEtiqueta == "Vendedor")
+			{
+				btnprecios.Visible = false;
+				btnusuarios.Visible = false;
+			}
 		}
 	}
 }

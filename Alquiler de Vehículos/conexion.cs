@@ -33,6 +33,22 @@ namespace Alquiler_de_Vehículos
 		}
 
 
+		/*///////////////////////////////////////////////////////////////////////USUARIOS///////////////////////////////////////////////////////////////////////////////////////////*/
+
+		//Agregar Usuarios
+		public String AgregarUsuario(Int32 codigo, String usuario, String pass, String tipo)
+		{
+			try
+			{
+				cmd = new SqlCommand("Insert Into Usuarios(codigo,usuario,password,tipo) Values(" + codigo + ",'" + usuario + "','" + pass + "','" + tipo + "')", cn);
+				cmd.ExecuteNonQuery();
+				return "Usuario agregado con éxito.";
+			}
+			catch (Exception ex)
+			{
+				return "No se pudo agregar el usuario. \t\n" + ex.ToString();
+			}
+		}
 		//Logueo del usuario
 		public Boolean LoguearUsuario(String usuario, String contra)
 		{
@@ -55,6 +71,15 @@ namespace Alquiler_de_Vehículos
 				MessageBox.Show("Datos ingresados incorrectos: " + ex.ToString());
 			}
 			return false;
+		}
+		//Filtrar registros en listado clientes
+		public void FiltrarRegistrosUsuarios(DataGridView dataGrid, String texto)
+		{
+			da = new SqlDataAdapter("Select * From Usuarios Where usuario like '%" + texto + "%' or tipo like '%" + texto + "%'", cn);
+			DataSet ds = new DataSet();
+			da.Fill(ds, "usuario");
+			dataGrid.DataSource = ds;
+			dataGrid.DataMember = "usuario";
 		}
 
 		///////////////////////////////////////////////////METODOS GENERALES////////////////////////////////////////////////////////////////////////////////////////////
@@ -261,7 +286,7 @@ namespace Alquiler_de_Vehículos
 		//Metodo para madificar vehiculo
 		public String ActualizacionVehiculo(Int32 codigo, String placa, String marca, String modelo, String color, Int32 año, String clase, String embrague, String propietario)
 		{
-			String salida = "Datos de cliente actualizados con éxito.";
+			String salida = "Datos de vehiculo actualizados con éxito.";
 			try
 			{
 				cmd = new SqlCommand("UPDATE [Vehiculos] SET [Placa]= '" + placa + "',[Marca] ='" + marca + "',[Modelo] ='" + modelo + "',[Color] ='" + color + "',[Año] ='" + año + "',[Clase] ='" + clase + "',[Tipoembrague] ='" + embrague + "',[Propietario] ='" + propietario + "' WHERE [CodigoVehiculo]=" + codigo + "", cn);
@@ -287,6 +312,56 @@ namespace Alquiler_de_Vehículos
 			catch (Exception ex)
 			{
 				return "El vehiculo no pudo ser eliminado. \t\n" + ex.ToString();
+			}
+		}
+		//Modificar precio
+		//Metodo para madificar vehiculo
+		public String ActualizacionPrecioVehiculo(Int32 codigo, Double renta)
+		{
+			String salida = "Precio de vehículo actualizado con éxito.";
+			try
+			{
+				cmd = new SqlCommand("UPDATE [Vehiculos] SET [Renta]= " + renta + " WHERE [CodigoVehiculo]=" + codigo + "", cn);
+				cmd.ExecuteNonQuery();
+				return salida;
+			}
+			catch (Exception ex)
+			{
+				salida = "Precio no actualizados. \t\n" + ex.ToString();
+			}
+			return salida;
+		}
+
+		////////////////////////////////////////////////////////////////////////////RENTA///////////////////////////////////////////////////////////////////////
+
+		//Agregar renta
+		public String AgregarRenta(Int32 codigorenta, Int32 codigocliente, Int32 codigovehiculo, String Fecharenta, String Fechadevolucion, Double Fianza, Double Monto)
+		{
+			String salida = "Renta realizada con éxito";
+			try
+			{
+				cmd = new SqlCommand("Insert Into Renta([CodigoRenta],[CodigoCliente],[CodigoVehiculo],[FechaRenta],[FechaDevolucion],[Fianza],[Monto]) Values(" + codigorenta + "," + codigocliente + "," + codigovehiculo + ",'" + Fecharenta + "','" + Fechadevolucion + "'," + Fianza + "," + Monto +")", cn);
+				cmd.ExecuteNonQuery();
+			}
+			catch (Exception ex)
+			{
+				return salida = "Renta no realizada. \t\n" + ex.ToString();
+			}
+			return salida;
+		}
+		//Consultar Renta
+		public void ConsultaRenta(DataGridView dataGrid)
+		{
+			try
+			{
+				da = new SqlDataAdapter("SELECT [Renta].[CodigoRenta],[Clientes].[DUI],[Clientes].[Nombre1],[Clientes].[Nombre2],[Clientes].[Apellido1],[Clientes].[Apellido2],[Renta].[FechaRenta],[Renta].[FechaDevolucion],[Renta].[Fianza],[Renta].[Monto],[Vehiculos].[Placa],[Vehiculos].[Marca],[Vehiculos].[Modelo]  FROM [Renta]  INNER JOIN [Clientes] ON Clientes.CodigoCliente = Renta.CodigoCliente INNER JOIN[Vehiculos] ON Vehiculos.CodigoVehiculo = Renta.CodigoVehiculo", cn);
+				dt = new DataTable();
+				da.Fill(dt);
+				dataGrid.DataSource = dt;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("No se pudo cargar los registros a la tabla Renta. \t\n" + ex.ToString());
 			}
 		}
 	}

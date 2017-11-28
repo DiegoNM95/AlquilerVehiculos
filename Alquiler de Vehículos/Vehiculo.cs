@@ -96,5 +96,10 @@ namespace Alquiler_de_Vehículos
 				MessageBox.Show("Los datos seleccionados y el vehiculo que quiere eliminar no coinciden");
 			}
 		}
+		//Actulizar precio de vehiculos
+		public void ActualizarPrecioVehiculos()
+		{
+			MessageBox.Show(conexion.ActualizacionPrecioVehiculo(Codigo, Renta));
+		}
 	}
 }

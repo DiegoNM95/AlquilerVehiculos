@@ -12,35 +12,38 @@ namespace Alquiler_de_Vehículos
 {
 	public partial class UsuariosCont : Form
 	{
+		Usuario usuario = new Usuario();
 		public UsuariosCont()
 		{
 			InitializeComponent();
 		}
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            
-        }
-
         private void UsuariosCont_Load(object sender, EventArgs e)
         {
             cmbusuario.Items.Add("Administrador");
             cmbusuario.Items.Add("Vendedor");
+			usuario.Listado(dgvListado);
         }
-    }
+
+		private void btbcrear_Click(object sender, EventArgs e)
+		{
+			usuario.NombreUsuario = txtusuario.Text;
+			usuario.Contraseña = txtcontraseña.Text;
+			usuario.Tipo = cmbusuario.Text;
+			usuario.AgregarUsuario();
+		}
+
+		private void textBox1_TextChanged(object sender, EventArgs e)
+		{
+			usuario.FiltrarListado(dgvListado, textBox1.Text);
+		}
+
+		private void tsmRegresar_Click(object sender, EventArgs e)
+		{
+			frmprincipal frmprincipal = new frmprincipal();
+			this.Hide();
+			frmprincipal.ShowDialog();
+			this.Close();
+		}
+	}
 }
