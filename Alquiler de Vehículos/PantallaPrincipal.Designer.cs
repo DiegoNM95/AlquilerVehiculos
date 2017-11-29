@@ -30,24 +30,25 @@
 		{
 			this.lblnombreusuario = new System.Windows.Forms.Label();
 			this.lblnameuser = new System.Windows.Forms.Label();
-			this.btnconfiguracion = new System.Windows.Forms.Button();
-			this.btnrenta = new System.Windows.Forms.Button();
-			this.btnusuarios = new System.Windows.Forms.Button();
-			this.btnvehiculos = new System.Windows.Forms.Button();
-			this.btnprecios = new System.Windows.Forms.Button();
-			this.btnclientes = new System.Windows.Forms.Button();
 			this.lblclientes = new System.Windows.Forms.Label();
 			this.lblvehiculos = new System.Windows.Forms.Label();
 			this.lblprecios = new System.Windows.Forms.Label();
 			this.lblrenta = new System.Windows.Forms.Label();
 			this.lblusuarios = new System.Windows.Forms.Label();
 			this.lblconfiguracion = new System.Windows.Forms.Label();
+			this.btncerrarsesion = new System.Windows.Forms.Button();
+			this.btnconfiguracion = new System.Windows.Forms.Button();
+			this.btnrenta = new System.Windows.Forms.Button();
+			this.btnusuarios = new System.Windows.Forms.Button();
+			this.btnvehiculos = new System.Windows.Forms.Button();
+			this.btnprecios = new System.Windows.Forms.Button();
+			this.btnclientes = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// lblnombreusuario
 			// 
 			this.lblnombreusuario.AutoSize = true;
-			this.lblnombreusuario.Location = new System.Drawing.Point(696, 22);
+			this.lblnombreusuario.Location = new System.Drawing.Point(642, 27);
 			this.lblnombreusuario.Name = "lblnombreusuario";
 			this.lblnombreusuario.Size = new System.Drawing.Size(61, 17);
 			this.lblnombreusuario.TabIndex = 8;
@@ -56,11 +57,104 @@
 			// lblnameuser
 			// 
 			this.lblnameuser.AutoSize = true;
-			this.lblnameuser.Location = new System.Drawing.Point(763, 22);
+			this.lblnameuser.Location = new System.Drawing.Point(709, 27);
 			this.lblnameuser.Name = "lblnameuser";
 			this.lblnameuser.Size = new System.Drawing.Size(118, 17);
 			this.lblnameuser.TabIndex = 9;
 			this.lblnameuser.Text = "Nombres Usuario";
+			// 
+			// lblclientes
+			// 
+			this.lblclientes.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.lblclientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lblclientes.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblclientes.ForeColor = System.Drawing.Color.White;
+			this.lblclientes.Location = new System.Drawing.Point(28, 251);
+			this.lblclientes.Name = "lblclientes";
+			this.lblclientes.Size = new System.Drawing.Size(244, 37);
+			this.lblclientes.TabIndex = 10;
+			this.lblclientes.Text = "Clientes";
+			this.lblclientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// lblvehiculos
+			// 
+			this.lblvehiculos.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.lblvehiculos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lblvehiculos.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblvehiculos.ForeColor = System.Drawing.Color.White;
+			this.lblvehiculos.Location = new System.Drawing.Point(332, 251);
+			this.lblvehiculos.Name = "lblvehiculos";
+			this.lblvehiculos.Size = new System.Drawing.Size(244, 37);
+			this.lblvehiculos.TabIndex = 11;
+			this.lblvehiculos.Text = "Vehículos";
+			this.lblvehiculos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// lblprecios
+			// 
+			this.lblprecios.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.lblprecios.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lblprecios.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblprecios.ForeColor = System.Drawing.Color.White;
+			this.lblprecios.Location = new System.Drawing.Point(38, 474);
+			this.lblprecios.Name = "lblprecios";
+			this.lblprecios.Size = new System.Drawing.Size(244, 37);
+			this.lblprecios.TabIndex = 12;
+			this.lblprecios.Text = "Precios";
+			this.lblprecios.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// lblrenta
+			// 
+			this.lblrenta.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.lblrenta.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lblrenta.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblrenta.ForeColor = System.Drawing.Color.White;
+			this.lblrenta.Location = new System.Drawing.Point(637, 251);
+			this.lblrenta.Name = "lblrenta";
+			this.lblrenta.Size = new System.Drawing.Size(244, 37);
+			this.lblrenta.TabIndex = 13;
+			this.lblrenta.Text = "Renta";
+			this.lblrenta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// lblusuarios
+			// 
+			this.lblusuarios.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.lblusuarios.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lblusuarios.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblusuarios.ForeColor = System.Drawing.Color.White;
+			this.lblusuarios.Location = new System.Drawing.Point(332, 474);
+			this.lblusuarios.Name = "lblusuarios";
+			this.lblusuarios.Size = new System.Drawing.Size(244, 37);
+			this.lblusuarios.TabIndex = 14;
+			this.lblusuarios.Text = "Usuarios";
+			this.lblusuarios.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// lblconfiguracion
+			// 
+			this.lblconfiguracion.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.lblconfiguracion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.lblconfiguracion.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblconfiguracion.ForeColor = System.Drawing.Color.White;
+			this.lblconfiguracion.Location = new System.Drawing.Point(637, 474);
+			this.lblconfiguracion.Name = "lblconfiguracion";
+			this.lblconfiguracion.Size = new System.Drawing.Size(244, 37);
+			this.lblconfiguracion.TabIndex = 15;
+			this.lblconfiguracion.Text = "Configuración";
+			this.lblconfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lblconfiguracion.Visible = false;
+			// 
+			// btncerrarsesion
+			// 
+			this.btncerrarsesion.BackColor = System.Drawing.SystemColors.Control;
+			this.btncerrarsesion.BackgroundImage = global::Alquiler_de_Vehículos.Properties.Resources.boton_de_apagado;
+			this.btncerrarsesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.btncerrarsesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btncerrarsesion.ForeColor = System.Drawing.Color.White;
+			this.btncerrarsesion.Location = new System.Drawing.Point(851, 17);
+			this.btncerrarsesion.Name = "btncerrarsesion";
+			this.btncerrarsesion.Size = new System.Drawing.Size(30, 30);
+			this.btncerrarsesion.TabIndex = 16;
+			this.btncerrarsesion.UseVisualStyleBackColor = false;
+			this.btncerrarsesion.Click += new System.EventHandler(this.btncerrarsesion_Click);
 			// 
 			// btnconfiguracion
 			// 
@@ -80,7 +174,7 @@
 			this.btnrenta.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.btnrenta.BackgroundImage = global::Alquiler_de_Vehículos.Properties.Resources.renta;
 			this.btnrenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.btnrenta.Location = new System.Drawing.Point(28, 329);
+			this.btnrenta.Location = new System.Drawing.Point(637, 106);
 			this.btnrenta.Name = "btnrenta";
 			this.btnrenta.Size = new System.Drawing.Size(244, 142);
 			this.btnrenta.TabIndex = 6;
@@ -116,7 +210,7 @@
 			this.btnprecios.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.btnprecios.BackgroundImage = global::Alquiler_de_Vehículos.Properties.Resources.precio;
 			this.btnprecios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.btnprecios.Location = new System.Drawing.Point(637, 106);
+			this.btnprecios.Location = new System.Drawing.Point(38, 329);
 			this.btnprecios.Name = "btnprecios";
 			this.btnprecios.Size = new System.Drawing.Size(244, 142);
 			this.btnprecios.TabIndex = 1;
@@ -135,90 +229,12 @@
 			this.btnclientes.UseVisualStyleBackColor = false;
 			this.btnclientes.Click += new System.EventHandler(this.btnclientes_Click);
 			// 
-			// lblclientes
-			// 
-			this.lblclientes.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.lblclientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lblclientes.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblclientes.ForeColor = System.Drawing.Color.White;
-			this.lblclientes.Location = new System.Drawing.Point(28, 251);
-			this.lblclientes.Name = "lblclientes";
-			this.lblclientes.Size = new System.Drawing.Size(244, 37);
-			this.lblclientes.TabIndex = 10;
-			this.lblclientes.Text = "Clientes";
-			this.lblclientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblvehiculos
-			// 
-			this.lblvehiculos.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.lblvehiculos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lblvehiculos.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblvehiculos.ForeColor = System.Drawing.Color.White;
-			this.lblvehiculos.Location = new System.Drawing.Point(332, 251);
-			this.lblvehiculos.Name = "lblvehiculos";
-			this.lblvehiculos.Size = new System.Drawing.Size(244, 37);
-			this.lblvehiculos.TabIndex = 11;
-			this.lblvehiculos.Text = "Vehículos";
-			this.lblvehiculos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblprecios
-			// 
-			this.lblprecios.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.lblprecios.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lblprecios.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblprecios.ForeColor = System.Drawing.Color.White;
-			this.lblprecios.Location = new System.Drawing.Point(637, 251);
-			this.lblprecios.Name = "lblprecios";
-			this.lblprecios.Size = new System.Drawing.Size(244, 37);
-			this.lblprecios.TabIndex = 12;
-			this.lblprecios.Text = "Precios";
-			this.lblprecios.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblrenta
-			// 
-			this.lblrenta.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.lblrenta.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lblrenta.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblrenta.ForeColor = System.Drawing.Color.White;
-			this.lblrenta.Location = new System.Drawing.Point(28, 474);
-			this.lblrenta.Name = "lblrenta";
-			this.lblrenta.Size = new System.Drawing.Size(244, 37);
-			this.lblrenta.TabIndex = 13;
-			this.lblrenta.Text = "Renta";
-			this.lblrenta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblusuarios
-			// 
-			this.lblusuarios.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.lblusuarios.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lblusuarios.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblusuarios.ForeColor = System.Drawing.Color.White;
-			this.lblusuarios.Location = new System.Drawing.Point(332, 474);
-			this.lblusuarios.Name = "lblusuarios";
-			this.lblusuarios.Size = new System.Drawing.Size(244, 37);
-			this.lblusuarios.TabIndex = 14;
-			this.lblusuarios.Text = "Usuarios";
-			this.lblusuarios.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblconfiguracion
-			// 
-			this.lblconfiguracion.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.lblconfiguracion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.lblconfiguracion.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblconfiguracion.ForeColor = System.Drawing.Color.White;
-			this.lblconfiguracion.Location = new System.Drawing.Point(637, 474);
-			this.lblconfiguracion.Name = "lblconfiguracion";
-			this.lblconfiguracion.Size = new System.Drawing.Size(244, 37);
-			this.lblconfiguracion.TabIndex = 15;
-			this.lblconfiguracion.Text = "Configuración";
-			this.lblconfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.lblconfiguracion.Visible = false;
-			// 
 			// frmprincipal
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(908, 539);
+			this.Controls.Add(this.btncerrarsesion);
 			this.Controls.Add(this.lblconfiguracion);
 			this.Controls.Add(this.lblusuarios);
 			this.Controls.Add(this.lblrenta);
@@ -258,5 +274,6 @@
 		private System.Windows.Forms.Label lblrenta;
 		private System.Windows.Forms.Label lblusuarios;
 		private System.Windows.Forms.Label lblconfiguracion;
+		private System.Windows.Forms.Button btncerrarsesion;
 	}
 }

@@ -47,7 +47,35 @@ namespace Alquiler_de_Vehículos
 				MessageBox.Show(Conexion.AgregarUsuario(Codigo, NombreUsuario, Contraseña, Tipo));
 			}	
 		}
-
+		//Colocar informacion de clientes en texboxs
+		public Boolean AddTexBoxUsuarios(String principal)
+		{
+			NombreUsuario = principal;
+			if (Conexion.CargarTexboxUsuarios(principal) != null)
+			{
+				Codigo = Convert.ToInt32(Conexion.CargarTexboxUsuarios(NombreUsuario).GetValue(0));
+				Contraseña = Conexion.CargarTexboxUsuarios(NombreUsuario).GetValue(1).ToString();
+				Tipo = Conexion.CargarTexboxUsuarios(NombreUsuario).GetValue(2).ToString();
+				return true;
+			}
+			else
+			{
+				MessageBox.Show("No se encontró el usuario especificado.");
+				return false;
+			}
+		}
+		//MODIFICAR USUARIO
+		public void ActualizarUsuario()
+		{
+			if (Conexion.BusquedaReg("Usuarios", "codigo", Codigo.ToString(), "codigo") != null && Conexion.CuentaRegistrosEsp("Usuarios","usuario",NombreUsuario,"codigo",Codigo)==0)
+			{
+				MessageBox.Show(Conexion.ModificarUsuario(Codigo,NombreUsuario,Contraseña,Tipo));
+			}
+			else
+			{
+				MessageBox.Show("No puede modificar estos datos, porque el usuario ya existe.");
+			}
+		}
 		public void Listado(DataGridView dataGrid)
 		{
 			Conexion.CargarDtv(dataGrid, "Usuarios");
@@ -57,5 +85,19 @@ namespace Alquiler_de_Vehículos
 		{
 			Conexion.FiltrarRegistrosUsuarios(dataGrid, texto);
 		}
+
+		//Eliminar usuario
+		public void Eliminarusuario()
+		{
+			if (Conexion.BusquedaReg("Usuarios", "codigo", Codigo.ToString(), "codigo") != null && Codigo == Convert.ToInt32((Conexion.BusquedaReg("Usuarios", "usuario", "'" + NombreUsuario + "'", "codigo"))))
+			{
+				MessageBox.Show(Conexion.EliminarUsuario(Codigo));
+			}
+			else
+			{
+				MessageBox.Show("Los datos seleccionados y el usuario que quiere eliminar no coinciden");
+			}
+		}
+		//Actulizar 
 	}
 }

@@ -49,6 +49,55 @@ namespace Alquiler_de_Vehículos
 				return "No se pudo agregar el usuario. \t\n" + ex.ToString();
 			}
 		}
+		//Modificar Usuarios
+		public String ModificarUsuario(Int32 codigo, String usuario, String pass, String tipo)
+		{
+			try
+			{
+				cmd = new SqlCommand("Update Usuarios SET [usuario] ='"+usuario+"',[password]='"+pass+"', [tipo]='"+tipo+"' WHERE codigo = "+codigo+"", cn);
+				cmd.ExecuteNonQuery();
+				return "Datos modificados con éxito.";
+			}
+			catch (Exception ex)
+			{
+				return "No se pudo modificar el usuario. \t\n" + ex.ToString();
+			}
+		}
+		//Metodo para cargar informacion en texbox usuario
+		public String[] CargarTexboxUsuarios(String usuario)
+		{
+			try
+			{
+				cmd = new SqlCommand("Select * From Usuarios Where [usuario] = '" + usuario + "'", cn);
+				dr = cmd.ExecuteReader();
+				if (dr.Read())
+				{
+					String[] valores = new string[] { dr["codigo"].ToString(), dr["password"].ToString(), dr["tipo"].ToString()};
+					return valores;
+				}
+				dr.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("No se pudo realizar la consulta de usuarios a la BD. \t\n" + ex.ToString());
+			}
+			return null;
+		}
+		//Borrar usUARIO
+		public String EliminarUsuario(Int32 codigo)
+		{
+			try
+			{
+
+				cmd = new SqlCommand("Delete From Usuarios Where [codigo] = '" + codigo + "'", cn);
+				cmd.ExecuteNonQuery();
+				return "El usuario fue eliminado con éxito";
+			}
+			catch (Exception ex)
+			{
+				return "El cliente no pudo ser eliminado. \t\n" + ex.ToString();
+			}
+		}
 		//Logueo del usuario
 		public Boolean LoguearUsuario(String usuario, String contra)
 		{
@@ -315,7 +364,6 @@ namespace Alquiler_de_Vehículos
 			}
 		}
 		//Modificar precio
-		//Metodo para madificar vehiculo
 		public String ActualizacionPrecioVehiculo(Int32 codigo, Double renta)
 		{
 			String salida = "Precio de vehículo actualizado con éxito.";
@@ -330,6 +378,21 @@ namespace Alquiler_de_Vehículos
 				salida = "Precio no actualizados. \t\n" + ex.ToString();
 			}
 			return salida;
+		}
+		//Cargar Registros a DataGridView
+		public void CargarDtvVehiculos(DataGridView dataGrid, String tabla, String campo, String valor)
+		{
+			try
+			{
+				da = new SqlDataAdapter("Select * From "+ tabla+" Where ["+campo+"] <> "+valor+"", cn);
+				dt = new DataTable();
+				da.Fill(dt);
+				dataGrid.DataSource = dt;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("No se pudo cargar los registros a la tabla. \t\n" + ex.ToString());
+			}
 		}
 
 		////////////////////////////////////////////////////////////////////////////RENTA///////////////////////////////////////////////////////////////////////

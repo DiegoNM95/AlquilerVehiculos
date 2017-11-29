@@ -30,6 +30,7 @@
 		{
 			this.tdadministracion = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.btnbuscar = new System.Windows.Forms.Button();
 			this.btbeliminar = new System.Windows.Forms.Button();
 			this.cmbusuario = new System.Windows.Forms.ComboBox();
 			this.lbltipousuario = new System.Windows.Forms.Label();
@@ -41,12 +42,12 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.dgvListado = new System.Windows.Forms.DataGridView();
 			this.button3 = new System.Windows.Forms.Button();
 			this.mstAtajos = new System.Windows.Forms.MenuStrip();
 			this.tsmRegresar = new System.Windows.Forms.ToolStripMenuItem();
 			this.tsmLimpiar = new System.Windows.Forms.ToolStripMenuItem();
-			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.tdadministracion.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
@@ -67,6 +68,7 @@
 			// 
 			// tabPage1
 			// 
+			this.tabPage1.Controls.Add(this.btnbuscar);
 			this.tabPage1.Controls.Add(this.btbeliminar);
 			this.tabPage1.Controls.Add(this.cmbusuario);
 			this.tabPage1.Controls.Add(this.lbltipousuario);
@@ -86,6 +88,17 @@
 			this.tabPage1.Text = "Administración de usuarios";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
+			// btnbuscar
+			// 
+			this.btnbuscar.Location = new System.Drawing.Point(593, 254);
+			this.btnbuscar.Margin = new System.Windows.Forms.Padding(4);
+			this.btnbuscar.Name = "btnbuscar";
+			this.btnbuscar.Size = new System.Drawing.Size(100, 28);
+			this.btnbuscar.TabIndex = 12;
+			this.btnbuscar.Text = "Buscar";
+			this.btnbuscar.UseVisualStyleBackColor = true;
+			this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
+			// 
 			// btbeliminar
 			// 
 			this.btbeliminar.Location = new System.Drawing.Point(435, 254);
@@ -95,9 +108,11 @@
 			this.btbeliminar.TabIndex = 11;
 			this.btbeliminar.Text = "Eliminar usuario";
 			this.btbeliminar.UseVisualStyleBackColor = true;
+			this.btbeliminar.Click += new System.EventHandler(this.btbeliminar_Click);
 			// 
 			// cmbusuario
 			// 
+			this.cmbusuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbusuario.FormattingEnabled = true;
 			this.cmbusuario.Location = new System.Drawing.Point(240, 108);
 			this.cmbusuario.Margin = new System.Windows.Forms.Padding(4);
@@ -124,6 +139,7 @@
 			this.btnModificar.TabIndex = 7;
 			this.btnModificar.Text = "Modificar";
 			this.btnModificar.UseVisualStyleBackColor = true;
+			this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
 			// 
 			// btbcrear
 			// 
@@ -160,6 +176,7 @@
 			this.txtcodigo.ReadOnly = true;
 			this.txtcodigo.Size = new System.Drawing.Size(132, 22);
 			this.txtcodigo.TabIndex = 3;
+			this.txtcodigo.Visible = false;
 			// 
 			// label3
 			// 
@@ -195,6 +212,14 @@
 			this.tabPage2.Text = "Búsqueda de Usuarios";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
+			// textBox1
+			// 
+			this.textBox1.Location = new System.Drawing.Point(60, 58);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(740, 22);
+			this.textBox1.TabIndex = 9;
+			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+			// 
 			// dgvListado
 			// 
 			this.dgvListado.AllowUserToAddRows = false;
@@ -218,6 +243,7 @@
 			this.button3.TabIndex = 4;
 			this.button3.Text = "Buscar usuario";
 			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.button3_Click);
 			// 
 			// mstAtajos
 			// 
@@ -247,14 +273,7 @@
 			this.tsmLimpiar.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
 			this.tsmLimpiar.Name = "tsmLimpiar";
 			this.tsmLimpiar.Size = new System.Drawing.Size(32, 24);
-			// 
-			// textBox1
-			// 
-			this.textBox1.Location = new System.Drawing.Point(60, 58);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(740, 22);
-			this.textBox1.TabIndex = 9;
-			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+			this.tsmLimpiar.Click += new System.EventHandler(this.tsmLimpiar_Click);
 			// 
 			// UsuariosCont
 			// 
@@ -303,5 +322,6 @@
 		private System.Windows.Forms.ToolStripMenuItem tsmRegresar;
 		private System.Windows.Forms.ToolStripMenuItem tsmLimpiar;
 		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.Button btnbuscar;
 	}
 }

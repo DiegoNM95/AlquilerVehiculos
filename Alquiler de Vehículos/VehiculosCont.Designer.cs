@@ -515,11 +515,14 @@
 			// 
 			// dgvlistadodeautos
 			// 
+			this.dgvlistadodeautos.AllowUserToAddRows = false;
+			this.dgvlistadodeautos.AllowUserToDeleteRows = false;
 			this.dgvlistadodeautos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvlistadodeautos.Location = new System.Drawing.Point(8, 90);
 			this.dgvlistadodeautos.Margin = new System.Windows.Forms.Padding(4);
 			this.dgvlistadodeautos.MultiSelect = false;
 			this.dgvlistadodeautos.Name = "dgvlistadodeautos";
+			this.dgvlistadodeautos.ReadOnly = true;
 			this.dgvlistadodeautos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvlistadodeautos.Size = new System.Drawing.Size(766, 277);
 			this.dgvlistadodeautos.TabIndex = 2;

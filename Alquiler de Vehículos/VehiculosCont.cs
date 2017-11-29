@@ -153,39 +153,46 @@ namespace Alquiler_de_Vehículos
 
 		private void btnagregar_Click(object sender, EventArgs e)
 		{
-			//Asignación de valores
-			vehiculo.Placa = txtPlaca.Text;
-			vehiculo.Color = txtColor.Text;
-			vehiculo.Propietario = txtPropietario.Text;
-			vehiculo.Marca = txtMarca.Text;
-			vehiculo.Modelo = txtModelo.Text;
-			vehiculo.Año = Convert.ToInt32(txtAño.Text);
-			vehiculo.Clase = cboClaseVehiculo.Text;
-			vehiculo.Tipoembrague = cboEmbrague.Text;
-			vehiculo.Renta = 0.00;
-			//Agregar vehículo
-			vehiculo.AgregarVehiculo();
-			//Actualizar listados
-			vehiculo.FillTable(dgvlistadodeautos);
-			//Limpiar campos
-			txtPlaca.Text = "";
-			pbPlaca.Visible = false;
-			txtColor.Text = "";
-			pbColor.Visible = false;
-			txtPropietario.Text = "";
-			pbPropietario.Visible = false;
-			txtMarca.Text = "";
-			pbMarca.Visible = false;
-			txtModelo.Text = "";
-			pbModelo.Visible = false;
-			txtAño.Text = "";
-			pbAño.Visible = false;
-			cboClaseVehiculo.SelectedIndex = -1;
-			pbClasevehiculo.Visible = false;
-			cboEmbrague.SelectedIndex = -1;
-			pbEmbrague.Visible = false;
-			btnmodificar.Enabled = false;
-			btneliminar.Enabled = false;
+			if ((Validaciones.TexBoxEmpty(txtPlaca, pbPlaca) && Validaciones.TexBoxEmpty(txtColor, pbColor) && Validaciones.TexBoxEmpty(txtPropietario, pbPropietario) && Validaciones.TexBoxEmpty(txtMarca, pbMarca) && Validaciones.TexBoxEmpty(txtModelo, pbModelo) && Validaciones.ComboBoxEmpty(cboClaseVehiculo, pbClasevehiculo) && Validaciones.TexBoxEmpty(txtAño, pbAño) && Validaciones.ComboBoxEmpty(cboEmbrague, pbEmbrague)) == false)
+			{
+				MessageBox.Show("Debe completar la información para modificar el vehiculo");
+			}
+			else
+			{
+				//Asignación de valores
+				vehiculo.Placa = txtPlaca.Text;
+				vehiculo.Color = txtColor.Text;
+				vehiculo.Propietario = txtPropietario.Text;
+				vehiculo.Marca = txtMarca.Text;
+				vehiculo.Modelo = txtModelo.Text;
+				vehiculo.Año = Convert.ToInt32(txtAño.Text);
+				vehiculo.Clase = cboClaseVehiculo.Text;
+				vehiculo.Tipoembrague = cboEmbrague.Text;
+				vehiculo.Renta = 0.00;
+				//Agregar vehículo
+				vehiculo.AgregarVehiculo();
+				//Actualizar listados
+				vehiculo.FillTable(dgvlistadodeautos);
+				//Limpiar campos
+				txtPlaca.Text = "";
+				pbPlaca.Visible = false;
+				txtColor.Text = "";
+				pbColor.Visible = false;
+				txtPropietario.Text = "";
+				pbPropietario.Visible = false;
+				txtMarca.Text = "";
+				pbMarca.Visible = false;
+				txtModelo.Text = "";
+				pbModelo.Visible = false;
+				txtAño.Text = "";
+				pbAño.Visible = false;
+				cboClaseVehiculo.SelectedIndex = -1;
+				pbClasevehiculo.Visible = false;
+				cboEmbrague.SelectedIndex = -1;
+				pbEmbrague.Visible = false;
+				btnmodificar.Enabled = false;
+				btneliminar.Enabled = false;
+			}	
 		}
 
 		private void btnbuscar_Click(object sender, EventArgs e)

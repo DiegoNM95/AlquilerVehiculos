@@ -20,6 +20,7 @@ namespace Alquiler_de_Vehículos
 
 		private void frmRenta_Load(object sender, EventArgs e)
 		{
+			dtpDevolucion.Value = DateTime.Today;
 			renta.CargarClientes(dgvUser);
 			renta.CargarVehiculos(dgvVehiculo);
 			renta.ListadoRenta(dgvListadoRenta);
@@ -83,6 +84,22 @@ namespace Alquiler_de_Vehículos
 			this.Hide();
 			frmprincipal.ShowDialog();
 			this.Close();
+		}
+
+		private void tsmLimpiar_Click(object sender, EventArgs e)
+		{
+			txtClase.Text = "";
+			txtCodigoCliente.Text = "";
+			txtCodigoVehiculo.Text = "";
+			txtDui.Text = "";
+			txtMarca.Text = "";
+			txtModelo.Text = "";
+			txtMonto.Text = "";
+			txtNit.Text = "";
+			txtnombreclientes.Text = "";
+			txtPlaca.Text = "";
+			txtUser.Text = "";
+			txtVehiculo.Text = "";
 		}
 	}
 }

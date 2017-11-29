@@ -179,5 +179,8 @@
   <ItemGroup>
     <None Include="img\trash.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="img\boton-de-apagado.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

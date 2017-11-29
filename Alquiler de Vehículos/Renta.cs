@@ -26,7 +26,7 @@ namespace Alquiler_de_Vehículos
 		//cargar vehiculos
 		public void CargarVehiculos(DataGridView dataGrid)
 		{
-			conexion.CargarDtv(dataGrid, "Vehiculos");
+			conexion.CargarDtvVehiculos(dataGrid, "Vehiculos", "Renta","0");
 		}
 
 		//Filtrar clients

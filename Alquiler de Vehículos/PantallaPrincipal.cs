@@ -71,8 +71,19 @@ namespace Alquiler_de_Vehículos
 			if (Usuario.TipoEtiqueta == "Vendedor")
 			{
 				btnprecios.Visible = false;
+				lblprecios.Visible = false;
 				btnusuarios.Visible = false;
+				lblusuarios.Visible = false;
+				//cambiar de posicion
 			}
+		}
+
+		private void btncerrarsesion_Click(object sender, EventArgs e)
+		{
+			frmlogin frmlogin = new frmlogin();
+			this.Hide();
+			frmlogin.ShowDialog();
+			this.Close();
 		}
 	}
 }
