@@ -117,9 +117,9 @@ namespace Alquiler_de_Vehículos
 							}
 							if (i == 11)
 							{
-								Char[] cadena =text.Text.ToCharArray();
+								Char[] cadena = text.Text.ToCharArray();
 								int cont = 0;
-								for (int a = 0; a <= text.TextLength-1; a++)
+								for (int a = 0; a <= text.TextLength - 1; a++)
 								{
 									if (cadena[a] == Char.Parse("-"))
 									{
@@ -167,7 +167,7 @@ namespace Alquiler_de_Vehículos
 					{
 						for (int i = 0; i <= text.TextLength; i++)
 						{
-							if (text.TextLength==0)
+							if (text.TextLength == 0)
 							{
 								text.Text = "P";
 								text.Select(text.MaxLength, text.MaxLength);
@@ -222,9 +222,9 @@ namespace Alquiler_de_Vehículos
 		}
 
 		//VALIDACIONES DATETIMEPICKER
-		public static Boolean VDate(DateTimePicker dateTimePicker,PictureBox marco, int limiteaños)
+		public static Boolean VDate(DateTimePicker dateTimePicker, PictureBox marco, int limiteaños)
 		{
-			DateTime ahora=DateTime.Today;
+			DateTime ahora = DateTime.Today;
 			if ((ahora.Year - dateTimePicker.Value.Year) < limiteaños)
 			{
 				marco.Visible = true;
@@ -234,6 +234,32 @@ namespace Alquiler_de_Vehículos
 			}
 			marco.Visible = false;
 			return true;
+		}
+		//Validaciones de correo
+		public static Boolean VCorreo(TextBox txt)
+		{
+			if (txt.Text == "")
+			{
+				return true;
+			}
+			else
+			{
+				if (!txt.Text.Contains("@") && !txt.Text.Contains("."))
+				{
+					return false;
+				}
+				else
+				{
+					if ((txt.Text.IndexOf("@") < txt.Text.LastIndexOf(".")))
+					{
+						return true;
+					}
+					else
+					{
+						return false;
+					}
+				}
+			}
 		}
 	}
 }

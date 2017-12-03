@@ -24,7 +24,7 @@ namespace Alquiler_de_Vehículos
 			{
 				cn = new SqlConnection("workstation id=AlquilerVehiculo.mssql.somee.com;packet size=4096;user id=Ludieg8995_SQLLogin_1;pwd=ugd86mtoce;data source=AlquilerVehiculo.mssql.somee.com;persist security info=False;initial catalog=AlquilerVehiculo;MultipleActiveResultSets=true");
 				cn.Open();
-				MessageBox.Show("Conexion exitosa.");
+				//MessageBox.Show("Conexion exitosa.");
 			}
 			catch (Exception ex)
 			{
@@ -379,31 +379,16 @@ namespace Alquiler_de_Vehículos
 			}
 			return salida;
 		}
-		//Cargar Registros a DataGridView
-		public void CargarDtvVehiculos(DataGridView dataGrid, String tabla, String campo, String valor)
-		{
-			try
-			{
-				da = new SqlDataAdapter("Select * From "+ tabla+" Where ["+campo+"] <> "+valor+"", cn);
-				dt = new DataTable();
-				da.Fill(dt);
-				dataGrid.DataSource = dt;
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("No se pudo cargar los registros a la tabla. \t\n" + ex.ToString());
-			}
-		}
 
 		////////////////////////////////////////////////////////////////////////////RENTA///////////////////////////////////////////////////////////////////////
 
 		//Agregar renta
-		public String AgregarRenta(Int32 codigorenta, Int32 codigocliente, Int32 codigovehiculo, String Fecharenta, String Fechadevolucion, Double Fianza, Double Monto)
+		public String AgregarRenta(Int32 codigorenta, Int32 codigocliente, Int32 codigovehiculo, String Fecharenta, String Fechadevolucion, Double Fianza, Double Monto, Double Mora)
 		{
 			String salida = "Renta realizada con éxito";
 			try
 			{
-				cmd = new SqlCommand("Insert Into Renta([CodigoRenta],[CodigoCliente],[CodigoVehiculo],[FechaRenta],[FechaDevolucion],[Fianza],[Monto]) Values(" + codigorenta + "," + codigocliente + "," + codigovehiculo + ",'" + Fecharenta + "','" + Fechadevolucion + "'," + Fianza + "," + Monto +")", cn);
+				cmd = new SqlCommand("Insert Into Renta([CodigoRenta],[CodigoCliente],[CodigoVehiculo],[FechaRenta],[FechaDevolucion],[Fianza],[Monto],[Mora]) Values(" + codigorenta + "," + codigocliente + "," + codigovehiculo + ",'" + Fecharenta + "','" + Fechadevolucion + "'," + Fianza + "," + Monto +","+Mora+")", cn);
 				cmd.ExecuteNonQuery();
 			}
 			catch (Exception ex)
@@ -417,7 +402,84 @@ namespace Alquiler_de_Vehículos
 		{
 			try
 			{
-				da = new SqlDataAdapter("SELECT [Renta].[CodigoRenta],[Clientes].[DUI],[Clientes].[Nombre1],[Clientes].[Nombre2],[Clientes].[Apellido1],[Clientes].[Apellido2],[Renta].[FechaRenta],[Renta].[FechaDevolucion],[Renta].[Fianza],[Renta].[Monto],[Vehiculos].[Placa],[Vehiculos].[Marca],[Vehiculos].[Modelo]  FROM [Renta]  INNER JOIN [Clientes] ON Clientes.CodigoCliente = Renta.CodigoCliente INNER JOIN[Vehiculos] ON Vehiculos.CodigoVehiculo = Renta.CodigoVehiculo", cn);
+				da = new SqlDataAdapter("SELECT [Renta].[CodigoRenta],[Clientes].[DUI],[Clientes].[Nombre1],[Clientes].[Nombre2],[Clientes].[Apellido1],[Clientes].[Apellido2],[Vehiculos].[Placa],[Vehiculos].[Marca],[Vehiculos].[Modelo],[Renta].[FechaRenta],[Renta].[FechaDevolucion],[Renta].[FechaEntrega],[Renta].[Fianza],[Renta].[Mora],[Renta].[Monto]  FROM [Renta]  INNER JOIN [Clientes] ON Clientes.CodigoCliente = Renta.CodigoCliente INNER JOIN[Vehiculos] ON Vehiculos.CodigoVehiculo = Renta.CodigoVehiculo", cn);
+				dt = new DataTable();
+				da.Fill(dt);
+				dataGrid.DataSource = dt;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("No se pudo cargar los registros a la tabla Renta. \t\n" + ex.ToString());
+			}
+		}
+		//Agregar entrega
+		public String AgregarEntrega(Int32 codigorenta, String fechaentrega, Double mora, Double monto)
+		{
+			try
+			{
+				cmd = new SqlCommand("UPDATE Renta SET FechaEntrega='" + fechaentrega + "', Mora=" + mora + ", Monto=" + monto + " WHERE CodigoRenta=" + codigorenta + "", cn);
+				cmd.ExecuteNonQuery();
+				return "Entrega de vehículo realizada con éxito.";
+			}
+			catch (Exception ex)
+			{
+				return "No pudo agregarse la entraga del vehículo. \t\n" + ex.ToString();
+			}
+		}
+		//Cargar vehiculos sin rentar o que tengan precio de renta distinto de cero
+		public void CargarDtvVehiculos(DataGridView dataGrid)
+		{
+			try
+			{
+				da = new SqlDataAdapter("SELECT	V.CodigoVehiculo,V.Placa,V.Marca,V.Modelo,V.Color,V.Renta FROM  Vehiculos As V WHERE V.Renta <> 0 And((Select COUNT(CodigoRenta) From Renta Where CodigoVehiculo = V.CodigoVehiculo And FechaEntrega is null) = 0 Or(Select COUNT(CodigoVehiculo) From Renta Where CodigoVehiculo = V.CodigoVehiculo) = 0)", cn);
+				dt = new DataTable();
+				da.Fill(dt);
+				dataGrid.DataSource = dt;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("No se pudo cargar los registros a la tabla. \t\n" + ex.ToString());
+			}
+		}
+		//Cargar Clientes sin rentar o que tengan precio de renta distinto de cero
+		public void CargarDtvClientes(DataGridView dataGrid)
+		{
+			try
+			{
+				da = new SqlDataAdapter("SELECT	C.CodigoCliente,C.DUi,C.NIT,C.Nombre1,C.Nombre2,C.Apellido1,C.Apellido2 from Clientes As C Where (Select Count(CodigoRenta) From Renta As R Where R.CodigoCliente = C.CodigoCliente And R.FechaEntrega Is Null) = 0 Or(Select Count(CodigoRenta) From Renta As R Where R.CodigoCliente = C.CodigoCliente And R.CodigoRenta is not null) = 0", cn);
+				dt = new DataTable();
+				da.Fill(dt);
+				dataGrid.DataSource = dt;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("No se pudo cargar los registros a la tabla. \t\n" + ex.ToString());
+			}
+		}
+		//Filtrar Clientes en renta
+		public void FiltrarClientesRenta(DataGridView dataGrid, String texto)
+		{
+			da = new SqlDataAdapter("SELECT	C.CodigoCliente,C.DUi,C.NIT,C.Nombre1,C.Nombre2,C.Apellido1,C.Apellido2 From Clientes As C Where ((Select Count(CodigoRenta) From Renta As R Where R.CodigoCliente = C.CodigoCliente And R.FechaEntrega Is Null) = 0 Or(Select Count(CodigoRenta) From Renta As R Where R.CodigoCliente = C.CodigoCliente And R.CodigoRenta is not null) = 0) And(C.DUI like '%"+texto+"%' or C.NIT like '%"+texto+ "%' or C.Nombre1 like '" + texto + "%' or C.Nombre2 like '" + texto + "%' or C.Apellido1 like '" + texto + "%' or C.Apellido2 like '" + texto + "%')", cn);
+			DataSet ds = new DataSet();
+			da.Fill(ds, "CodigoCliente");
+			dataGrid.DataSource = ds;
+			dataGrid.DataMember = "CodigoCliente";
+		}
+		//Filtrar vehiculos en renta
+		public void FiltrarVehiculosRenta(DataGridView dataGrid, String texto)
+		{
+			da = new SqlDataAdapter("SELECT	V.CodigoVehiculo,V.Placa,V.Marca,V.Modelo,V.Color,V.Renta FROM  Vehiculos As V WHERE V.Renta <> 0 And((Select COUNT(CodigoRenta) From Renta Where CodigoVehiculo = V.CodigoVehiculo And FechaEntrega is null) = 0 Or(Select COUNT(CodigoVehiculo) From Renta Where CodigoVehiculo = V.CodigoVehiculo) = 0) And(Placa like '%"+texto+"%' or Marca like '"+texto+"%' or Modelo like '"+texto+"%' or Color like '"+texto+"%' or Renta like '%"+texto+"%')", cn);
+			DataSet ds = new DataSet();
+			da.Fill(ds, "CodigoVehiculo");
+			dataGrid.DataSource = ds;
+			dataGrid.DataMember = "CodigoVehiculo";
+		}
+		//Filtrar el listado de renta
+		public void FiltrarListadoRenta(DataGridView dataGrid, String texto)
+		{
+			try
+			{
+				da = new SqlDataAdapter("SELECT [Renta].[CodigoRenta],[Clientes].[DUI],[Clientes].[Nombre1],[Clientes].[Nombre2],[Clientes].[Apellido1],[Clientes].[Apellido2],[Vehiculos].[Placa],[Vehiculos].[Marca],[Vehiculos].[Modelo],[Renta].[FechaRenta],[Renta].[FechaDevolucion],[Renta].[FechaEntrega],[Renta].[Fianza],[Renta].[Mora],[Renta].[Monto] FROM[Renta] INNER JOIN[Clientes] ON Clientes.CodigoCliente = Renta.CodigoCliente INNER JOIN[Vehiculos] ON Vehiculos.CodigoVehiculo = Renta.CodigoVehiculo WHERE[Clientes].[DUI] like '%"+texto+ "%' OR[Clientes].[Nombre1] like '" + texto + "%' OR[Clientes].[Nombre2] like '" + texto + "%' OR[Clientes].[Apellido1] like '" + texto + "%' OR[Clientes].[Apellido2] like '" + texto + "%' OR[Vehiculos].[Placa] like '%" + texto + "%' OR[Vehiculos].[Marca] like '" + texto + "%' OR[Vehiculos].[Modelo] like '" + texto + "%'", cn);
 				dt = new DataTable();
 				da.Fill(dt);
 				dataGrid.DataSource = dt;

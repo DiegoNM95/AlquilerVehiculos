@@ -217,6 +217,7 @@
 			this.txtcorreo.Name = "txtcorreo";
 			this.txtcorreo.Size = new System.Drawing.Size(383, 22);
 			this.txtcorreo.TabIndex = 59;
+			this.txtcorreo.Leave += new System.EventHandler(this.txtcorreo_Leave);
 			// 
 			// txttelefono
 			// 

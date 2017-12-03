@@ -30,13 +30,18 @@ namespace Alquiler_de_Vehículos
 
 		private void btnModificar_Click(object sender, EventArgs e)
 		{
-			vehiculo.Codigo = Convert.ToInt32(dgvListado.CurrentRow.Cells[0].Value.ToString());
-			vehiculo.Renta = Convert.ToDouble(txtPrecio.Text);
-			/*MessageBox.Show(vehiculo.Codigo.ToString());
-			MessageBox.Show(vehiculo.Renta.ToString());*/
-			vehiculo.ActualizarPrecioVehiculos();
-			vehiculo.FillTable(dgvListado);
-			txtbusqueda.Text = "";
+			if (MessageBox.Show("¿Está seguro que quiere agregar un nuevo precio?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes && Validaciones.TexBoxEmpty(txtPrecio, pbPrecio))
+			{
+				vehiculo.Codigo = Convert.ToInt32(dgvListado.CurrentRow.Cells[0].Value.ToString());
+				vehiculo.Renta = Convert.ToDouble(txtPrecio.Text);
+				vehiculo.ActualizarPrecioVehiculos();
+				vehiculo.FillTable(dgvListado);
+				txtbusqueda.Text = "";
+			}
+			else
+			{
+				MessageBox.Show("Debe ingresar un precio");
+			}
 		}
 
 		private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
@@ -53,6 +58,11 @@ namespace Alquiler_de_Vehículos
 			this.Hide();
 			frmprincipal.ShowDialog();
 			this.Close();
+		}
+
+		private void txtPrecio_Leave(object sender, EventArgs e)
+		{
+			Validaciones.TexBoxEmpty(txtPrecio, pbPrecio);
 		}
 	}
 }

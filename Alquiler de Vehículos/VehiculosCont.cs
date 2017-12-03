@@ -36,7 +36,14 @@ namespace Alquiler_de_Vehículos
 
 		private void txtPlaca_Leave(object sender, EventArgs e)
 		{
-			Validaciones.TexBoxEmpty(txtPlaca, pbPlaca);
+			if(Validaciones.TexBoxEmpty(txtPlaca, pbPlaca))
+			{
+				if (!Validaciones.MinCaracter(txtPlaca, 8))
+				{
+					MessageBox.Show("Se se reconoce como un número de placa.");
+					txtPlaca.Focus();
+				}
+			}
 		}
 
 		private void txtColor_Leave(object sender, EventArgs e)

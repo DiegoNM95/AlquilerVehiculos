@@ -29,16 +29,18 @@
 		private void InitializeComponent()
 		{
 			this.gbxVehiculo = new System.Windows.Forms.GroupBox();
-			this.dgvListado = new System.Windows.Forms.DataGridView();
 			this.txtbusqueda = new System.Windows.Forms.TextBox();
+			this.dgvListado = new System.Windows.Forms.DataGridView();
 			this.btnModificar = new System.Windows.Forms.Button();
 			this.mstAtajos = new System.Windows.Forms.MenuStrip();
 			this.tsmRegresar = new System.Windows.Forms.ToolStripMenuItem();
 			this.label1 = new System.Windows.Forms.Label();
 			this.txtPrecio = new System.Windows.Forms.TextBox();
+			this.pbPrecio = new System.Windows.Forms.PictureBox();
 			this.gbxVehiculo.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
 			this.mstAtajos.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pbPrecio)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// gbxVehiculo
@@ -52,18 +54,6 @@
 			this.gbxVehiculo.TabStop = false;
 			this.gbxVehiculo.Text = "Vehiculo";
 			// 
-			// dgvListado
-			// 
-			this.dgvListado.AllowUserToAddRows = false;
-			this.dgvListado.AllowUserToDeleteRows = false;
-			this.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvListado.Location = new System.Drawing.Point(6, 49);
-			this.dgvListado.Name = "dgvListado";
-			this.dgvListado.RowTemplate.Height = 24;
-			this.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgvListado.Size = new System.Drawing.Size(754, 268);
-			this.dgvListado.TabIndex = 0;
-			// 
 			// txtbusqueda
 			// 
 			this.txtbusqueda.Location = new System.Drawing.Point(6, 21);
@@ -71,6 +61,19 @@
 			this.txtbusqueda.Size = new System.Drawing.Size(753, 22);
 			this.txtbusqueda.TabIndex = 1;
 			this.txtbusqueda.TextChanged += new System.EventHandler(this.txtbusqueda_TextChanged);
+			// 
+			// dgvListado
+			// 
+			this.dgvListado.AllowUserToAddRows = false;
+			this.dgvListado.AllowUserToDeleteRows = false;
+			this.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvListado.Location = new System.Drawing.Point(6, 49);
+			this.dgvListado.Name = "dgvListado";
+			this.dgvListado.ReadOnly = true;
+			this.dgvListado.RowTemplate.Height = 24;
+			this.dgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dgvListado.Size = new System.Drawing.Size(754, 268);
+			this.dgvListado.TabIndex = 0;
 			// 
 			// btnModificar
 			// 
@@ -118,6 +121,17 @@
 			this.txtPrecio.Size = new System.Drawing.Size(100, 22);
 			this.txtPrecio.TabIndex = 4;
 			this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
+			this.txtPrecio.Leave += new System.EventHandler(this.txtPrecio_Leave);
+			// 
+			// pbPrecio
+			// 
+			this.pbPrecio.BackColor = System.Drawing.Color.Tomato;
+			this.pbPrecio.Location = new System.Drawing.Point(72, 384);
+			this.pbPrecio.Name = "pbPrecio";
+			this.pbPrecio.Size = new System.Drawing.Size(106, 28);
+			this.pbPrecio.TabIndex = 6;
+			this.pbPrecio.TabStop = false;
+			this.pbPrecio.Visible = false;
 			// 
 			// frmPrecios
 			// 
@@ -129,6 +143,7 @@
 			this.Controls.Add(this.btnModificar);
 			this.Controls.Add(this.gbxVehiculo);
 			this.Controls.Add(this.mstAtajos);
+			this.Controls.Add(this.pbPrecio);
 			this.MainMenuStrip = this.mstAtajos;
 			this.Name = "frmPrecios";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -139,6 +154,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.dgvListado)).EndInit();
 			this.mstAtajos.ResumeLayout(false);
 			this.mstAtajos.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pbPrecio)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -154,5 +170,6 @@
 		private System.Windows.Forms.ToolStripMenuItem tsmRegresar;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox txtPrecio;
+		private System.Windows.Forms.PictureBox pbPrecio;
 	}
 }

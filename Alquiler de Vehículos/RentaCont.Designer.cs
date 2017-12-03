@@ -29,13 +29,12 @@
 		private void InitializeComponent()
 		{
 			this.tabpageHistorial = new System.Windows.Forms.TabPage();
+			this.btnEntrega = new System.Windows.Forms.Button();
 			this.label10 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.dgvListadoRenta = new System.Windows.Forms.DataGridView();
 			this.tabcontrolRentas = new System.Windows.Forms.TabControl();
 			this.tabPageAgregar = new System.Windows.Forms.TabPage();
-			this.label9 = new System.Windows.Forms.Label();
-			this.txtMonto = new System.Windows.Forms.TextBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.txtFianza = new System.Windows.Forms.TextBox();
 			this.txtCodigoVehiculo = new System.Windows.Forms.TextBox();
@@ -83,6 +82,7 @@
 			// 
 			// tabpageHistorial
 			// 
+			this.tabpageHistorial.Controls.Add(this.btnEntrega);
 			this.tabpageHistorial.Controls.Add(this.label10);
 			this.tabpageHistorial.Controls.Add(this.textBox1);
 			this.tabpageHistorial.Controls.Add(this.dgvListadoRenta);
@@ -94,6 +94,16 @@
 			this.tabpageHistorial.TabIndex = 1;
 			this.tabpageHistorial.Text = "Historial de rentas";
 			this.tabpageHistorial.UseVisualStyleBackColor = true;
+			// 
+			// btnEntrega
+			// 
+			this.btnEntrega.Location = new System.Drawing.Point(9, 498);
+			this.btnEntrega.Name = "btnEntrega";
+			this.btnEntrega.Size = new System.Drawing.Size(1224, 61);
+			this.btnEntrega.TabIndex = 3;
+			this.btnEntrega.Text = "Agregar Entrega";
+			this.btnEntrega.UseVisualStyleBackColor = true;
+			this.btnEntrega.Click += new System.EventHandler(this.btnEntrega_Click);
 			// 
 			// label10
 			// 
@@ -110,6 +120,7 @@
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(522, 22);
 			this.textBox1.TabIndex = 1;
+			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 			// 
 			// dgvListadoRenta
 			// 
@@ -121,7 +132,7 @@
 			this.dgvListadoRenta.Name = "dgvListadoRenta";
 			this.dgvListadoRenta.ReadOnly = true;
 			this.dgvListadoRenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgvListadoRenta.Size = new System.Drawing.Size(1223, 498);
+			this.dgvListadoRenta.Size = new System.Drawing.Size(1223, 422);
 			this.dgvListadoRenta.TabIndex = 0;
 			// 
 			// tabcontrolRentas
@@ -137,8 +148,6 @@
 			// 
 			// tabPageAgregar
 			// 
-			this.tabPageAgregar.Controls.Add(this.label9);
-			this.tabPageAgregar.Controls.Add(this.txtMonto);
 			this.tabPageAgregar.Controls.Add(this.label8);
 			this.tabPageAgregar.Controls.Add(this.txtFianza);
 			this.tabPageAgregar.Controls.Add(this.txtCodigoVehiculo);
@@ -164,23 +173,6 @@
 			this.tabPageAgregar.TabIndex = 0;
 			this.tabPageAgregar.Text = "Renta de vehiculos";
 			this.tabPageAgregar.UseVisualStyleBackColor = true;
-			// 
-			// label9
-			// 
-			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(519, 462);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(51, 17);
-			this.label9.TabIndex = 45;
-			this.label9.Text = "Monto:";
-			// 
-			// txtMonto
-			// 
-			this.txtMonto.Location = new System.Drawing.Point(522, 482);
-			this.txtMonto.Name = "txtMonto";
-			this.txtMonto.ReadOnly = true;
-			this.txtMonto.Size = new System.Drawing.Size(228, 22);
-			this.txtMonto.TabIndex = 46;
 			// 
 			// label8
 			// 
@@ -248,9 +240,9 @@
 			this.label7.AutoSize = true;
 			this.label7.Location = new System.Drawing.Point(319, 78);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(47, 17);
+			this.label7.Size = new System.Drawing.Size(98, 17);
 			this.label7.TabIndex = 12;
-			this.label7.Text = "Clase:";
+			this.label7.Text = "Renta por día:";
 			// 
 			// txtModelo
 			// 
@@ -562,8 +554,6 @@
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.TabPage tabPageAgregar;
-		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.TextBox txtMonto;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.TextBox txtFianza;
 		private System.Windows.Forms.TextBox txtCodigoVehiculo;
@@ -595,5 +585,6 @@
 		private System.Windows.Forms.TextBox txtUser;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label lbluser;
+		private System.Windows.Forms.Button btnEntrega;
 	}
 }

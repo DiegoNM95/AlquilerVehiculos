@@ -369,5 +369,14 @@ namespace Alquiler_de_Vehículos
 				btnborrar.Enabled = false;
 			}
 		}
+
+		private void txtcorreo_Leave(object sender, EventArgs e)
+		{
+			if (!Validaciones.VCorreo(txtcorreo))
+			{
+				MessageBox.Show("Dirección de correo incorrecto.");
+				txtcorreo.Focus();
+			}
+		}
 	}
 }

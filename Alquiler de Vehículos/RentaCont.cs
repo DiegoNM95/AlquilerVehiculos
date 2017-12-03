@@ -39,7 +39,7 @@ namespace Alquiler_de_Vehículos
 		private void btnselectU_Click(object sender, EventArgs e)
 		{
 			txtCodigoCliente.Text = dgvUser.CurrentRow.Cells[0].Value.ToString();
-			txtnombreclientes.Text = dgvUser.CurrentRow.Cells[3].Value.ToString() + " " + dgvUser.CurrentRow.Cells[4].Value.ToString() + " " + dgvUser.CurrentRow.Cells[5].Value.ToString() + " " + dgvUser.CurrentRow.Cells[6].Value.ToString() + " " + dgvUser.CurrentRow.Cells[7].Value.ToString();
+			txtnombreclientes.Text = dgvUser.CurrentRow.Cells[3].Value.ToString() + " " + dgvUser.CurrentRow.Cells[4].Value.ToString() + " " + dgvUser.CurrentRow.Cells[5].Value.ToString() + " " + dgvUser.CurrentRow.Cells[6].Value.ToString();
 			txtDui.Text = dgvUser.CurrentRow.Cells[1].Value.ToString();
 			txtNit.Text = dgvUser.CurrentRow.Cells[2].Value.ToString();
 		}
@@ -50,7 +50,7 @@ namespace Alquiler_de_Vehículos
 			txtPlaca.Text = dgvVehiculo.CurrentRow.Cells[1].Value.ToString();
 			txtMarca.Text = dgvVehiculo.CurrentRow.Cells[2].Value.ToString();
 			txtModelo.Text = dgvVehiculo.CurrentRow.Cells[3].Value.ToString();
-			txtClase.Text = dgvVehiculo.CurrentRow.Cells[6].Value.ToString();
+			txtClase.Text = dgvVehiculo.CurrentRow.Cells[5].Value.ToString();
 		}
 
 		private void btnRentar_Click(object sender, EventArgs e)
@@ -60,17 +60,19 @@ namespace Alquiler_de_Vehículos
 				//Asignacion de valores
 				DateTime fdevol = new DateTime(dtpDevolucion.Value.Year, dtpDevolucion.Value.Month, dtpDevolucion.Value.Day, 0, 0, 0);
 				renta.Fechadevolucion = fdevol;
-				DateTime frenta = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0);
+				DateTime frenta = DateTime.Now;
 				renta.Fecharenta = frenta;
 				renta.Fianza = Convert.ToDouble(txtFianza.Text);
 				renta.CodigoVehiculo = Convert.ToInt32(txtCodigoVehiculo.Text);
 				renta.CodigoCliente = Convert.ToInt32(txtCodigoCliente.Text);
+				//txtMonto.Text = renta.Monto.ToString();
+				renta.Mora = 0;
 				renta.Monto = renta.MontoVehiculo();
-				txtMonto.Text = renta.Monto.ToString();
 				//Agrego la renta
 				renta.AgregarRenta();
 				//Actualizo listado
 				renta.ListadoRenta(dgvListadoRenta);
+
 			}
 			else
 			{
@@ -94,12 +96,33 @@ namespace Alquiler_de_Vehículos
 			txtDui.Text = "";
 			txtMarca.Text = "";
 			txtModelo.Text = "";
-			txtMonto.Text = "";
 			txtNit.Text = "";
 			txtnombreclientes.Text = "";
 			txtPlaca.Text = "";
 			txtUser.Text = "";
 			txtVehiculo.Text = "";
+		}
+
+		private void btnEntrega_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("¿Desea agregar la entrega de este auto?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+			{
+				renta.CodigoRenta = Convert.ToInt32(dgvListadoRenta.CurrentRow.Cells[0].Value.ToString());
+				renta.FechaEntrega = DateTime.Now;
+				renta.AgregarEntrega(dgvListadoRenta.CurrentRow.Cells[6].Value.ToString());
+				//MessageBox.Show(renta.CodigoRenta.ToString() + "," + renta.FechaEntrega.ToString() + "," + renta.CodigoVehiculo.ToString() + "," + renta.Mora.ToString() + "," + renta.Monto.ToString());
+				textBox1.Text = "";
+				txtUser.Text = "";
+				txtVehiculo.Text = "";
+				renta.ListadoRenta(dgvListadoRenta);
+				renta.CargarVehiculos(dgvVehiculo);
+				renta.CargarClientes(dgvUser);
+			}
+		}
+
+		private void textBox1_TextChanged(object sender, EventArgs e)
+		{
+			renta.FiltrarListadoRenta(dgvListadoRenta, textBox1.Text);
 		}
 	}
 }
